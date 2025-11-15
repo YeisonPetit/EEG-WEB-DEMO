@@ -33,7 +33,7 @@ export default function HeroSection() {
   return (
     <div className="relative min-h-screen overflow-hidden">
       {/* Animated Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900">
+      <div className="absolute inset-0 bg-linear-to-br from-slate-950 via-blue-950 to-slate-900">
         {/* Parallax Image Background */}
         <div 
           className="absolute inset-0 opacity-20"
@@ -47,7 +47,7 @@ export default function HeroSection() {
 
         {/* Overlay gradients */}
         <div className="absolute inset-0 bg-linear-to-r from-slate-950/90 via-transparent to-blue-950/90"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-slate-950"></div>
+        <div className="absolute inset-0 bg-linear-to-b from-transparent via-transparent to-slate-950"></div>
 
         {/* Parallax orbs */}
         <div 
@@ -102,12 +102,12 @@ export default function HeroSection() {
           <div className="space-y-8">
             {/* Intro Badge with animation */}
             <div className="animate-fadeIn mt-5">
-              <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-cyan-500/20 to-blue-500/20 backdrop-blur-xl border border-cyan-500/30 shadow-lg shadow-cyan-500/20">
-                <Sparkles className="w-5 h-5 text-cyan-400 animate-pulse" />
-                <span className="text-sm font-bold tracking-wider uppercase bg-gradient-to-r from-cyan-400 to-orange-400 bg-clip-text text-transparent">
+              <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-linear-to-r from-cyan-500/20 to-blue-500/20 backdrop-blur-xl border border-cyan-500/30 shadow-lg shadow-cyan-500/20">
+                <Sparkles className="w-5 h-5 text-orange-700 animate-pulse" />
+                <span className="text-sm font-bold tracking-wider uppercase bg-linear-to-r from-orange-400 to-cyan-400 bg-clip-text text-transparent">
                   Next Level Leadership
                 </span>
-                <Zap className="w-5 h-5 text-cyan-400 animate-pulse" />
+                <Zap className="w-5 h-5 text-orange-700 animate-pulse" />
               </div>
             </div>
 
@@ -117,7 +117,7 @@ export default function HeroSection() {
                 <span className="text-white">Lidera la</span>
               </h1>
               <h1 className="text-6xl md:text-8xl font-black leading-none animate-slideUp" style={{ animationDelay: '0.1s' }}>
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-blue-400 to-cyan-500 animate-gradient">
+                <span className="text-transparent bg-clip-text bg-linear-to-r from-orange-900 via-blue-400 to-cyan-500 animate-gradient">
                   revolución
                 </span>
               </h1>
@@ -176,7 +176,7 @@ export default function HeroSection() {
               {/* Image card */}
               <div className="relative rounded-3xl overflow-hidden border-2 border-cyan-500/20 shadow-2xl transform group-hover:scale-[1.02] transition-transform duration-500">
                 <img 
-                  src="/src/assets/Meeting1.jpg"
+                  src="/meet.jpg"
                   alt="Leadership Team"
                   className="w-full h-[600px] object-cover"
                 />

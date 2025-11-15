@@ -19,25 +19,25 @@ export default function LandingSections() {
       icon: GraduationCap,
       title: "Maestrías",
       description: "Programas de posgrado con validez internacional y enfoque práctico en gerencia moderna.",
-      features: ["Online y presencial", "18-24 meses", "Doble titulación"]
+      // features: ["Online y presencial", "18-24 meses", "Doble titulación"]
     },
     {
       icon: Briefcase,
       title: "Formación Ejecutiva",
       description: "Capacitación in-company diseñada para las necesidades específicas de tu organización.",
-      features: ["Metodología activa", "Facilitadores expertos", "ROI medible"]
+      // features: ["Metodología activa", "Facilitadores expertos", "ROI medible"]
     },
     {
       icon: Target,
       title: "Consultoría",
       description: "Asesoría estratégica para transformar tu empresa y alcanzar tus objetivos de negocio.",
-      features: ["Diagnóstico 360°", "Plan de acción", "Acompañamiento"]
+      // features: ["Diagnóstico 360°", "Plan de acción", "Acompañamiento"]
     },
     {
       icon: Lightbulb,
       title: "Certificaciones",
       description: "Programas especializados en áreas clave del management con reconocimiento global.",
-      features: ["Certificación oficial", "Flexible", "Actualizado"]
+      // features: ["Certificación oficial", "Flexible", "Actualizado"]
     }
   ];
 
@@ -149,9 +149,9 @@ export default function LandingSections() {
               ))}
             </div>
             <div className="relative">
-              <div className="aspect-video rounded-2xl bg-gradient-to-br overflow-hidden from-cyan-500/20 to-blue-500/20 border border-cyan-500/20">
+              <div className="aspect-video rounded-2xl bg-linear-to-br overflow-hidden from-cyan-500/20 to-blue-500/20 border border-cyan-500/20">
                 <img 
-                  src="/src/assets/FORMAL.png" 
+                  src="/meet1.jpg" 
                   alt="EEG Campus" 
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300 opacity-80"
                 />
@@ -184,23 +184,32 @@ export default function LandingSections() {
                 key={index}
                 className="group relative bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-cyan-500/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/20"
               >
-                <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-cyan-500/10 group-hover:bg-cyan-500/20 transition-colors mb-6">
-                  <program.icon className="w-7 h-7 text-cyan-400" />
+                <div className="mb-4 gap-3 flex">
+                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-cyan-500/10 group-hover:bg-cyan-500/20 transition-colors mb-6">
+                    <program.icon className="w-7 h-7 text-cyan-400" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-cyan-400 transition-colors">
+                    {program.title}
+                  </h3>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-cyan-400 transition-colors">
+
+                {/* <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-cyan-400 transition-colors">
                   {program.title}
-                </h3>
+                </h3> */}
+
                 <p className="text-gray-400 mb-6 leading-relaxed">
                   {program.description}
                 </p>
-                <ul className="space-y-3 mb-6">
+
+                {/* <ul className="space-y-3 mb-6">
                   {program.features.map((feature, idx) => (
                     <li key={idx} className="flex items-center gap-2 text-sm text-gray-400">
                       <div className="w-1.5 h-1.5 rounded-full bg-cyan-400"></div>
                       {feature}
                     </li>
                   ))}
-                </ul>
+                </ul> */}
+
                 <button className="w-full py-3 px-4 bg-white/5 hover:bg-cyan-500/20 border border-white/10 hover:border-cyan-500/50 rounded-lg text-white font-semibold transition-all duration-300 flex items-center justify-center gap-2 group-hover:gap-3">
                   Más información
                   <ArrowRight className="w-4 h-4" />
