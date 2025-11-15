@@ -1,117 +1,248 @@
-import React from 'react';
-import { ArrowRight, Users, Globe, Award } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { ArrowRight, Users, Globe, Award, Sparkles, Zap, Play } from 'lucide-react';
 
-export default function Hero() {
+export default function HeroSection() {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [scrollY, setScrollY] = useState(0);
+
+  const [particles] = useState(() => {
+    return Array.from({ length: 30 }, () => ({
+      left: `${Math.random() * 100}%`,
+      top: `${Math.random() * 100}%`,
+      animationDelay: `${Math.random() * 5}s`,
+      animationDuration: `${5 + Math.random() * 10}s`,
+      size: Math.random() * 3 + 1
+    }));
+  });
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <div className="relative min-h-screen overflow-hidden">
-      {/* Background con gradiente */}
-      <div className="absolute inset-0 bg-gradient-to-br from-amber-900 via-blue-950 to-slate-900">
-        {/* Efectos visuales de fondo */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-20 left-20 w-72 h-72 bg-amber-500 rounded-full filter blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-20 w-96 h-96 bg-blue-600 rounded-full filter blur-3xl animate-pulse delay-1000"></div>
-          <div className="absolute top-1/2 left-1/2 w-80 h-80 bg-amber-400 rounded-full filter blur-3xl animate-pulse delay-500"></div>
-        </div>
+      {/* Animated Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900">
+        {/* Parallax Image Background */}
+        <div 
+          className="absolute inset-0 opacity-20"
+          style={{
+            transform: `translateY(${scrollY * 0.5}px)`,
+            backgroundImage: 'url(https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1920&h=1080&fit=crop)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center'
+          }}
+        />
 
-        {/* Patrón de puntos */}
-        <div className="absolute inset-0 opacity-10" style={{
-          backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)',
-          backgroundSize: '50px 50px'
-        }}></div>
+        {/* Overlay gradients */}
+        <div className="absolute inset-0 bg-linear-to-r from-slate-950/90 via-transparent to-blue-950/90"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-slate-950"></div>
+
+        {/* Parallax orbs */}
+        <div 
+          className="absolute w-[600px] h-[600px] rounded-full filter blur-3xl opacity-20"
+          style={{
+            background: 'radial-gradient(circle, #06b6d4, transparent)',
+            left: `${-100 + mousePosition.x * 0.03}px`,
+            top: `${-100 + mousePosition.y * 0.03}px`,
+          }}
+        />
+        <div 
+          className="absolute w-[500px] h-[500px] rounded-full filter blur-3xl opacity-15"
+          style={{
+            background: 'radial-gradient(circle, #3b82f6, transparent)',
+            right: `${-100 + mousePosition.x * 0.02}px`,
+            bottom: `${-100 + mousePosition.y * 0.02}px`,
+          }}
+        />
+
+        {/* Animated grid */}
+        <div className="absolute inset-0 opacity-5" style={{
+          backgroundImage: 'linear-gradient(rgba(6,182,212,.3) 1px, transparent 1px), linear-gradient(90deg, rgba(6,182,212,.3) 1px, transparent 1px)',
+          backgroundSize: '80px 80px',
+          transform: `perspective(500px) rotateX(60deg) scale(2) translateY(-50%)`
+        }} />
+
+        {/* Floating particles */}
+        <div className="absolute inset-0">
+          {particles.map((particle, i) => (
+            <div
+              key={i}
+              className="absolute rounded-full bg-cyan-400 animate-float"
+              style={{
+                left: particle.left,
+                top: particle.top,
+                width: `${particle.size}px`,
+                height: `${particle.size}px`,
+                animationDelay: particle.animationDelay,
+                animationDuration: particle.animationDuration,
+                opacity: 0.6
+              }}
+            />
+          ))}
+        </div>
       </div>
 
-      {/* Contenido principal */}
-      <div className="relative z-10 container mx-auto px-6 py-20 flex items-center min-h-screen">
-        <div className="max-w-4xl">
-          {/* Texto introductorio */}
-          <div className="mb-6 animate-fadeIn">
-            <p className="text-amber-400 text-sm tracking-[0.3em] font-semibold uppercase">
-              EL LIDERAZGO DEL MAÑANA SE FORJA HOY
+      {/* Main Content - Split Layout */}
+      <div className="relative z-10 container mx-auto px-6 min-h-screen flex items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-center w-full py-20">
+          
+          {/* Left Side - Content */}
+          <div className="space-y-8">
+            {/* Intro Badge with animation */}
+            <div className="animate-fadeIn mt-5">
+              <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-cyan-500/20 to-blue-500/20 backdrop-blur-xl border border-cyan-500/30 shadow-lg shadow-cyan-500/20">
+                <Sparkles className="w-5 h-5 text-cyan-400 animate-pulse" />
+                <span className="text-sm font-bold tracking-wider uppercase bg-gradient-to-r from-cyan-400 to-orange-400 bg-clip-text text-transparent">
+                  Next Level Leadership
+                </span>
+                <Zap className="w-5 h-5 text-cyan-400 animate-pulse" />
+              </div>
+            </div>
+
+            {/* Main Title with stagger animation */}
+            <div className="space-y-3">
+              <h1 className="text-6xl md:text-8xl font-black leading-none animate-slideUp">
+                <span className="text-white">Lidera la</span>
+              </h1>
+              <h1 className="text-6xl md:text-8xl font-black leading-none animate-slideUp" style={{ animationDelay: '0.1s' }}>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-blue-400 to-cyan-500 animate-gradient">
+                  revolución
+                </span>
+              </h1>
+              <h1 className="text-6xl md:text-7xl font-black leading-none animate-slideUp" style={{ animationDelay: '0.2s' }}>
+                <span className="text-white">del mañana</span>
+              </h1>
+            </div>
+
+            {/* Description */}
+            <p className="text-xl md:text-2xl text-gray-300 leading-relaxed max-w-xl animate-fadeInUp" style={{ animationDelay: '0.4s' }}>
+              Formación disruptiva para líderes que no tienen miedo de 
+              <span className="text-cyan-400 font-semibold"> redefinir las reglas del juego</span>.
             </p>
-          </div>
 
-          {/* Título principal */}
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight animate-fadeInUp">
-            Construye el legado que quieres dejar
-          </h1>
-
-          {/* Slogan */}
-          <p className="text-2xl md:text-3xl text-amber-300 italic font-light mb-8 animate-fadeInUp delay-100">
-            Lidera con propósito, impacta con excelencia
-          </p>
-
-          {/* Subtítulo */}
-          <p className="text-lg md:text-xl text-gray-300 mb-12 leading-relaxed max-w-3xl animate-fadeInUp delay-200">
-            EEG es más que una escuela de negocios: es el ecosistema donde líderes visionarios se preparan para crear impacto real. Fusionamos estrategia, innovación y desarrollo humano para que tu liderazgo trascienda las fronteras del presente.
-          </p>
-
-          {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 mb-16 animate-fadeInUp delay-300">
-            <button className="group px-8 py-4 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-semibold rounded-lg hover:shadow-2xl hover:shadow-amber-500/50 transition-all duration-300 flex items-center justify-center gap-2 hover:scale-105">
-              Explora nuestros programas
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
-            <button className="px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-lg border-2 border-white/30 hover:bg-white/20 hover:border-white/50 transition-all duration-300 hover:scale-105">
-              Solicita orientación
-            </button>
-          </div>
-
-          {/* Credibilidad */}
-          <div className="flex items-center gap-3 text-gray-400 animate-fadeInUp delay-400">
-            <Users className="w-5 h-5 text-amber-400" />
-            <p className="text-sm">
-              Formando líderes de impacto desde hace más de 3 décadas
-            </p>
-          </div>
-
-          {/* Stats decorativos */}
-          <div className="grid grid-cols-3 gap-8 mt-16 max-w-2xl animate-fadeInUp delay-500">
-            <div className="text-center">
-              <div className="flex items-center justify-center mb-2">
-                <Globe className="w-6 h-6 text-amber-400" />
-              </div>
-              <p className="text-3xl font-bold text-white">12+</p>
-              <p className="text-sm text-gray-400">Países</p>
+            {/* CTAs */}
+            <div className="flex flex-col sm:flex-row gap-4 animate-fadeInUp" style={{ animationDelay: '0.6s' }}>
+              <button className="group cursor-pointer relative px-10 py-5 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold rounded-2xl overflow-hidden hover:shadow-2xl hover:shadow-cyan-500/50 transition-all duration-300 hover:scale-105">
+                <span className="relative z-10 flex items-center justify-center gap-3">
+                  Transforma tu carrera
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+              </button>
+              <button className="group cursor-pointer px-10 py-5 bg-white/5 backdrop-blur-xl text-white font-bold rounded-2xl border-2 border-cyan-500/30 hover:bg-white/10 hover:border-cyan-500/50 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-3">
+                <Play className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                Ver demo
+              </button>
             </div>
-            <div className="text-center">
-              <div className="flex items-center justify-center mb-2">
-                <Award className="w-6 h-6 text-amber-400" />
+
+            {/* Trust indicators */}
+            <div className="flex items-center gap-6 animate-fadeInUp" style={{ animationDelay: '0.8s' }}>
+              <div className="flex -space-x-3">
+                {[1,2,3,4,5].map((i) => (
+                  <img 
+                    key={i}
+                    src={`https://i.pravatar.cc/150?img=${i}`}
+                    alt="Student"
+                    className="w-10 h-10 rounded-full border-2 border-slate-950 hover:scale-110 transition-transform cursor-pointer"
+                  />
+                ))}
               </div>
-              <p className="text-3xl font-bold text-white">35+</p>
-              <p className="text-sm text-gray-400">Años</p>
+              <div>
+                <p className="text-cyan-400 font-bold text-sm">+15,000 líderes</p>
+                <p className="text-gray-400 text-xs">ya transformaron su futuro</p>
+              </div>
             </div>
-            <div className="text-center">
-              <div className="flex items-center justify-center mb-2">
-                <Users className="w-6 h-6 text-amber-400" />
+          </div>
+
+          {/* Right Side - Image with 3D effect */}
+          <div className="relative lg:block hidden animate-fadeInRight" style={{ animationDelay: '0.3s' }}>
+            {/* Main image container with 3D tilt */}
+            <div className="relative group">
+              {/* Glow effect behind */}
+              <div className="absolute -inset-4 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-3xl blur-3xl opacity-20 group-hover:opacity-30 transition-opacity duration-500"></div>
+              
+              {/* Image card */}
+              <div className="relative rounded-3xl overflow-hidden border-2 border-cyan-500/20 shadow-2xl transform group-hover:scale-[1.02] transition-transform duration-500">
+                <img 
+                  src="/src/assets/Meeting1.jpg"
+                  alt="Leadership Team"
+                  className="w-full h-[600px] object-cover"
+                />
+                
+                {/* Gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/30 via-transparent to-blue-500/30 mix-blend-overlay"></div>
+                
+                {/* Floating stats cards */}
+                <div className="absolute top-8 -left-6 bg-slate-900/90 backdrop-blur-xl rounded-2xl p-4 border border-cyan-500/30 shadow-xl transform hover:scale-110 transition-transform">
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-xl bg-cyan-500/20 flex items-center justify-center">
+                      <Globe className="w-6 h-6 text-cyan-400" />
+                    </div>
+                    <div>
+                      <p className="text-2xl font-black text-white">12+</p>
+                      <p className="text-xs text-gray-400">Países</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="absolute bottom-8 -right-6 bg-slate-900/90 backdrop-blur-xl rounded-2xl p-4 border border-cyan-500/30 shadow-xl transform hover:scale-110 transition-transform">
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-xl bg-cyan-500/20 flex items-center justify-center">
+                      <Award className="w-6 h-6 text-cyan-400" />
+                    </div>
+                    <div>
+                      <p className="text-2xl font-black text-white">35+</p>
+                      <p className="text-xs text-gray-400">Años</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="absolute top-1/2 -translate-y-1/2 -right-6 bg-slate-900/90 backdrop-blur-xl rounded-2xl p-4 border border-cyan-500/30 shadow-xl transform hover:scale-110 transition-transform">
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-xl bg-cyan-500/20 flex items-center justify-center">
+                      <Users className="w-6 h-6 text-cyan-400" />
+                    </div>
+                    <div>
+                      <p className="text-2xl font-black text-white">15K+</p>
+                      <p className="text-xs text-gray-400">Graduados</p>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <p className="text-3xl font-bold text-white">15K+</p>
-              <p className="text-sm text-gray-400">Graduados</p>
+
+              {/* Decorative elements */}
+              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-cyan-500/20 rounded-full blur-2xl"></div>
+              <div className="absolute -top-6 -right-6 w-32 h-32 bg-blue-500/20 rounded-full blur-2xl"></div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Indicador de scroll */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex items-start justify-center p-2">
-          <div className="w-1 h-3 bg-white/50 rounded-full animate-pulse"></div>
-        </div>
-      </div>
+      {/* Bottom fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-slate-950 to-transparent"></div>
 
       <style jsx>{`
         @keyframes fadeIn {
-          from {
-            opacity: 0;
-          }
-          to {
-            opacity: 1;
-          }
+          from { opacity: 0; }
+          to { opacity: 1; }
         }
 
         @keyframes fadeInUp {
           from {
             opacity: 0;
-            transform: translateY(20px);
+            transform: translateY(30px);
           }
           to {
             opacity: 1;
@@ -119,36 +250,83 @@ export default function Hero() {
           }
         }
 
+        @keyframes fadeInRight {
+          from {
+            opacity: 0;
+            transform: translateX(50px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+
+        @keyframes slideUp {
+          from {
+            opacity: 0;
+            transform: translateY(50px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes float {
+          0%, 100% { 
+            transform: translate(0, 0) scale(1);
+            opacity: 0.6;
+          }
+          25% { 
+            transform: translate(10px, -20px) scale(1.1);
+            opacity: 0.8;
+          }
+          50% { 
+            transform: translate(-10px, -10px) scale(0.9);
+            opacity: 0.4;
+          }
+          75% { 
+            transform: translate(5px, -15px) scale(1.05);
+            opacity: 0.7;
+          }
+        }
+
+        @keyframes gradient {
+          0%, 100% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+        }
+
         .animate-fadeIn {
-          animation: fadeIn 0.8s ease-out;
+          animation: fadeIn 1s ease-out;
+          animation-fill-mode: both;
         }
 
         .animate-fadeInUp {
-          animation: fadeInUp 0.8s ease-out;
+          animation: fadeInUp 1s ease-out;
+          animation-fill-mode: both;
         }
 
-        .delay-100 {
-          animation-delay: 0.1s;
+        .animate-fadeInRight {
+          animation: fadeInRight 1s ease-out;
+          animation-fill-mode: both;
         }
 
-        .delay-200 {
-          animation-delay: 0.2s;
+        .animate-slideUp {
+          animation: slideUp 0.8s ease-out;
+          animation-fill-mode: both;
         }
 
-        .delay-300 {
-          animation-delay: 0.3s;
+        .animate-float {
+          animation: float ease-in-out infinite;
         }
 
-        .delay-400 {
-          animation-delay: 0.4s;
-        }
-
-        .delay-500 {
-          animation-delay: 0.5s;
-        }
-
-        .delay-1000 {
-          animation-delay: 1s;
+        .animate-gradient {
+          background-size: 200% 200%;
+          animation: gradient 3s ease infinite;
         }
       `}</style>
     </div>
