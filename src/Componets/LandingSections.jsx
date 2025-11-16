@@ -71,12 +71,6 @@ export default function LandingSections() {
       role: "Gerente de Proyectos",
       image: "https://i.pravatar.cc/150?img=5",
       text: "El networking y las conexiones que hice en EEG son invaluables. Ahora formo parte de una comunidad de líderes."
-    },
-    {
-      name: "Ana Rodríguez",
-      role: "Gerente de Proyectos",
-      image: "https://i.pravatar.cc/150?img=5",
-      text: "El networking y las conexiones que hice en EEG son invaluables. Ahora formo parte de una comunidad de líderes."
     }
   ];
 
@@ -288,51 +282,55 @@ export default function LandingSections() {
 </section>
 
       {/* Testimonials Section */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-cyan-500 rounded-full filter blur-3xl"></div>
-        </div>
+<section className="py-24 relative overflow-hidden">
+  <div className="absolute inset-0 opacity-5">
+    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-cyan-500 rounded-full filter blur-3xl"></div>
+  </div>
 
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 mb-6">
-              <Heart className="w-4 h-4 text-cyan-400" />
-              <span className="text-sm font-semibold text-cyan-400 uppercase tracking-wider">Testimonios</span>
-            </div>
-            <h2 className="text-4xl md:text-6xl font-black text-white mb-6">
-              Historias de éxito
-            </h2>
-            <p className="text-xl text-gray-300">
-              Conoce a algunos de los líderes que han transformado sus carreras con EEG
+  <div className="container mx-auto px-6 relative z-10">
+    <div className="max-w-3xl mx-auto text-center mb-16">
+      <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 mb-6">
+        <Heart className="w-4 h-4 text-cyan-400" />
+        <span className="text-sm font-semibold text-cyan-400 uppercase tracking-wider">Testimonios</span>
+      </div>
+      <h2 className="text-4xl md:text-6xl font-black text-white mb-6">
+        Historias de éxito
+      </h2>
+      <p className="text-xl text-gray-300">
+        Conoce a algunos de los líderes que han transformado sus carreras con EEG
+      </p>
+    </div>
+
+    {/* Contenedor con overflow-hidden */}
+    <div className="overflow-hidden">
+      <div className="flex gap-10 animate-scroll">
+        {[...testimonials, ...testimonials].map((testimonial, index) => (
+          <div 
+            key={index}
+            className="relative bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-cyan-500/30 transition-all duration-300 hover:scale-105 min-w-[300px] max-w-[300px] shrink-0"
+          >
+            <Quote className="w-10 h-10 text-cyan-400/30 mb-4" />
+            <p className="text-gray-300 mb-6 leading-relaxed">
+              "{testimonial.text}"
             </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <div 
-                key={index}
-                className="relative bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-cyan-500/30 transition-all duration-300 hover:scale-105"
-              >
-                <Quote className="w-10 h-10 text-cyan-400/30 mb-4" />
-                <p className="text-gray-300 mb-6 leading-relaxed">
-                  "{testimonial.text}"
-                </p>
-                <div className="flex items-center gap-4">
-                  <img 
-                    src={testimonial.image} 
-                    alt={testimonial.name}
-                    className="w-12 h-12 rounded-full border-2 border-cyan-500/50"
-                  />
-                  <div>
-                    <h4 className="text-white font-semibold">{testimonial.name}</h4>
-                    <p className="text-gray-400 text-sm">{testimonial.role}</p>
-                  </div>
-                </div>
+            <div className="flex items-center gap-4">
+              <img 
+                src={testimonial.image} 
+                alt={testimonial.name}
+                className="w-12 h-12 rounded-full border-2 border-cyan-500/50"
+              />
+              <div>
+                <h4 className="text-white font-semibold">{testimonial.name}</h4>
+                <p className="text-gray-400 text-sm">{testimonial.role}</p>
               </div>
-            ))}
+            </div>
           </div>
-        </div>
-      </section>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
       <section className="py-20 bg-linear-to-b from-slate-900 to-slate-950">
       <Empresas />
       </section>
