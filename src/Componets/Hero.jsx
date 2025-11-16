@@ -128,7 +128,7 @@ export default function HeroSection() {
 
             {/* Description */}
             <p className="text-xl md:text-2xl text-gray-300 leading-relaxed max-w-xl animate-fadeInUp" style={{ animationDelay: '0.4s' }}>
-              Formación disruptiva para líderes que no tienen miedo de 
+              Formaciónes para líderes que no tienen miedo de 
               <span className="text-cyan-400 font-semibold"> redefinir las reglas del juego</span>.
             </p>
 

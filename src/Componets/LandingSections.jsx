@@ -220,6 +220,73 @@ export default function LandingSections() {
         </div>
       </section>
 
+     <section className="flex flex-col items-center h-auto py-24 relative overflow-hidden">
+  {/* Animated Background */}
+  <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900">
+    {/* Parallax Image Background */}
+    <div 
+      className="absolute inset-0 opacity-20"
+      style={{
+        transform: `translateY(${scrollY * 0.5}px)`,
+        backgroundImage: 'url(/meet.jpg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center'
+      }}
+    ></div>
+
+    {/* Overlay gradients */}
+    <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-transparent to-blue-950/90"></div>
+    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-slate-950"></div>
+
+    <div className="absolute inset-0 opacity-5">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-cyan-500 rounded-full filter blur-3xl"></div>
+    </div>
+  </div>
+
+  {/* Content */}
+  <div className="relative z-10">
+    <h1 className="text-4xl font-bold text-white text-center mb-16">Impacto Global</h1>
+    
+    <div className="flex flex-wrap justify-center gap-8 px-6">
+      <div className="bg-slate-900/90 backdrop-blur-xl rounded-2xl p-6 border border-cyan-500/30 shadow-xl transform hover:scale-110 transition-transform">
+        <div className="flex items-center gap-4">
+          <div className="w-16 h-16 rounded-xl bg-cyan-500/20 flex items-center justify-center">
+            <Globe className="w-10 h-10 text-cyan-400" />
+          </div>
+          <div>
+            <p className="text-4xl font-black text-white">12+</p>
+            <p className="text-sm text-gray-400">Países</p>
+          </div>
+        </div>
+      </div>
+
+      <div className="bg-slate-900/90 backdrop-blur-xl rounded-2xl p-6 border border-cyan-500/30 shadow-xl transform hover:scale-110 transition-transform">
+        <div className="flex items-center gap-4">
+          <div className="w-16 h-16 rounded-xl bg-cyan-500/20 flex items-center justify-center">
+            <Award className="w-10 h-10 text-cyan-400" />
+          </div>
+          <div>
+            <p className="text-4xl font-black text-white">35+</p>
+            <p className="text-sm text-gray-400">Años</p>
+          </div>
+        </div>
+      </div>
+
+      <div className="bg-slate-900/90 backdrop-blur-xl rounded-2xl p-6 border border-cyan-500/30 shadow-xl transform hover:scale-110 transition-transform">
+        <div className="flex items-center gap-4">
+          <div className="w-16 h-16 rounded-xl bg-cyan-500/20 flex items-center justify-center">
+            <Users className="w-10 h-10 text-cyan-400" />
+          </div>
+          <div>
+            <p className="text-4xl font-black text-white">15K+</p>
+            <p className="text-sm text-gray-400">Graduados</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
       {/* Testimonials Section */}
       <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 opacity-5">
