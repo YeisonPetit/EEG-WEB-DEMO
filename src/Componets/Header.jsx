@@ -45,7 +45,7 @@ export default class Header extends Component {
             {/* Logo */}
             <div className="flex items-center z-50">
               <img 
-                src="/LOGO.png" 
+                src="/Logo-blanco.png" 
                 alt="EEG Logo" 
                 className="h-12 w-auto transition-transform duration-300 hover:scale-105" 
               />
