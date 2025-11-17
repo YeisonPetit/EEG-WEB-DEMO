@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
 @keyframes scroll {
 	0% {
 		transform: translateX(0);

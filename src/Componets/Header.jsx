@@ -37,18 +37,18 @@ export default class Header extends Component {
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled 
           ? 'bg-slate-900/95 backdrop-blur-xl shadow-2xl border-b border-orange-500/20' 
-          : 'bg-gradient-to-r from-slate-900 via-cyan-950/50 to-slate-900/80 backdrop-blur-md'
+          : 'bg-liniar-to-r from-slate-900 via-cyan-950/50 to-slate-900/80 backdrop-blur-md'
       }`}>
         <div className="container mx-auto px-6">
           <div className="flex justify-between items-center h-20">
             
             {/* Logo */}
             <div className="flex items-center z-50">
-              <img 
+              <a href="/"><img 
                 src="/Logo-blanco.png" 
                 alt="EEG Logo" 
                 className="h-12 w-auto transition-transform duration-300 hover:scale-105" 
-              />
+              /></a>
             </div>
 
             {/* Desktop Navigation */}
@@ -67,7 +67,7 @@ export default class Header extends Component {
                 Noticias
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-400 group-hover:w-full transition-all duration-300"></span>
               </a>
-              <a href="#" className="text-sm font-medium text-white hover:text-orange-400 transition-colors duration-200 relative group">
+              <a href="/Contacto" className="text-sm font-medium text-white hover:text-orange-400 transition-colors duration-200 relative group">
                 Contacto
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-400 group-hover:w-full transition-all duration-300"></span>
               </a>
@@ -114,7 +114,7 @@ export default class Header extends Component {
                 <a href="#" className="text-white hover:text-orange-400 transition-colors py-2 px-4 rounded-lg hover:bg-white/5">
                   Noticias
                 </a>
-                <a href="#" className="text-white hover:text-orange-400 transition-colors py-2 px-4 rounded-lg hover:bg-white/5">
+                <a href="/Contacto" className="text-white hover:text-orange-400 transition-colors py-2 px-4 rounded-lg hover:bg-white/5">
                   Contacto
                 </a>
                 <a href="#" className="text-white hover:text-orange-400 transition-colors py-2 px-4 rounded-lg hover:bg-white/5">

@@ -1,21 +1,55 @@
 import React from 'react';
 import { 
-  Phone, Facebook, Instagram, Youtube, MessageCircle, ChevronRight, 
-  Sparkles, Mail, MapPin, Award
+  Facebook, Instagram, Youtube, MessageCircle, ChevronRight, 
+  Sparkles, Mail, MapPin, Award, BookOpen, Briefcase, Users,
+  Globe, GraduationCap, Building2, HelpCircle, ShieldCheck
 } from 'lucide-react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
-  const mapaSitio = [
-    { name: "Sobre la Escuela", href: "#", icon: Award },
-    { name: "Oferta Académica", href: "#", icon: Sparkles },
-    { name: "Servicios In Company", href: "#", icon: Sparkles },
-    { name: "Club de Negocios", href: "#", icon: Sparkles },
-    { name: "Universidad Corporativa", href: "#", icon: Sparkles },
-    { name: "FAQs", href: "#", icon: Sparkles },
-    { name: "Política de Cookies", href: "#", icon: Sparkles },
-    { name: "Política de Privacidad", href: "#", icon: Sparkles }
+  const sobreEEG = [
+    { name: "Nuestra Historia", href: "#", icon: Award },
+    { name: "Misión y Visión", href: "#", icon: Sparkles },
+    { name: "Acreditaciones", href: "#", icon: ShieldCheck },
+    { name: "Alianzas Estratégicas", href: "#", icon: Globe },
+    { name: "Equipo Directivo", href: "#", icon: Users }
+  ];
+
+  const programasAcademicos = [
+    { name: "Maestrías", href: "#", icon: GraduationCap },
+    { name: "Especialidades", href: "#", icon: Award },
+    { name: "Diplomados", href: "#", icon: BookOpen },
+    { name: "Certificaciones", href: "#", icon: ShieldCheck },
+    { name: "Cursos Ejecutivos", href: "#", icon: Briefcase }
+  ];
+
+  const servicios = [
+    { name: "Formación In-Company", href: "#", icon: Building2 },
+    { name: "Consultoría Gerencial", href: "#", icon: Briefcase },
+    { name: "Coaching Ejecutivo", href: "#", icon: Users },
+    { name: "Universidad Corporativa", href: "#", icon: GraduationCap },
+    { name: "Club de Negocios", href: "#", icon: Globe }
+  ];
+
+  const recursos = [
+    { name: "Campus Virtual", href: "#" },
+    { name: "Biblioteca Digital", href: "#" },
+    { name: "Noticias y Blog", href: "#" },
+    { name: "Eventos", href: "#" }
+  ];
+
+//   const soporte = [
+//     { name: "Centro de Ayuda", href: "#" },
+//     { name: "Preguntas Frecuentes", href: "#" },
+//     { name: "Contacto", href: "#" },
+//     { name: "Admisiones", href: "#" }
+//   ];
+
+  const legal = [
+    { name: "Política de Privacidad", href: "#" },
+    { name: "Política de Cookies", href: "#" },
+    { name: "Términos y Condiciones", href: "#" }
   ];
 
   return (
@@ -44,7 +78,7 @@ export default function Footer() {
       {/* Main Content */}
       <div className="relative z-10">
         {/* Top section with bold orange accent */}
-        <div className="bg-gradient-to-r from-orange-600 via-orange-500 to-orange-600 py-2">
+        <div className="bg-linear-to-r from-orange-600 via-orange-500 to-orange-600 py-2">
           <div className="container mx-auto px-6">
             <div className="flex items-center justify-center gap-2 text-sm font-bold">
               <Sparkles className="w-4 h-4 animate-pulse" />
@@ -55,11 +89,10 @@ export default function Footer() {
         </div>
 
         <div className="container mx-auto px-6 py-20">
-          <div className="grid lg:grid-cols-3 gap-16">
+          <div className="grid lg:grid-cols-12 gap-12">
             
-            {/* Column 1 - Brand & Contact */}
-            <div className="space-y-8">
-              {/* Logo/Brand */}
+            {/* Column 1 - Brand (3 cols) */}
+            <div className="lg:col-span-3 space-y-6">
               <div>
                 <div className="mb-6">
                   <img 
@@ -68,120 +101,139 @@ export default function Footer() {
                     className="h-16 w-auto"
                   />
                 </div>
-                <p className="text-gray-400 leading-relaxed">
-                  Formando líderes de excelencia que transforman organizaciones y sociedades.
+                <p className="text-gray-400 leading-relaxed mb-6">
+                  Formando líderes de excelencia que transforman organizaciones y sociedades en toda Latinoamérica.
                 </p>
               </div>
 
-              {/* Phone */}
-              <div className="group">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 bg-orange-500/20 rounded-lg flex items-center justify-center group-hover:bg-orange-500/30 transition-colors">
-                    <Phone className="w-5 h-5 text-orange-400" />
-                  </div>
-                  <h3 className="text-sm font-bold tracking-wider text-gray-400">TELÉFONO</h3>
-                </div>
-                <a 
-                  href="tel:+18099379410" 
-                  className="text-2xl font-black text-white hover:text-orange-400 transition-colors block ml-13"
-                >
-                  +1-809-937-9410
-                </a>
-              </div>
-
-              {/* Email (opcional) */}
-              <div className="group">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 bg-cyan-500/20 rounded-lg flex items-center justify-center group-hover:bg-cyan-500/30 transition-colors">
-                    <Mail className="w-5 h-5 text-cyan-400" />
-                  </div>
-                  <h3 className="text-sm font-bold tracking-wider text-gray-400">EMAIL</h3>
-                </div>
+              {/* Contact Info */}
+              <div className="space-y-4">
                 <a 
                   href="mailto:info@eeg.edu" 
-                  className="text-lg text-white hover:text-cyan-400 transition-colors block ml-13"
+                  className="group flex items-center gap-3 text-sm hover:text-orange-400 transition-colors"
                 >
-                  info@eeg.edu
+                  <div className="w-8 h-8 bg-orange-500/20 rounded-lg flex items-center justify-center group-hover:bg-orange-500/30 transition-colors">
+                    <Mail className="w-4 h-4 text-orange-400" />
+                  </div>
+                  <span>info@eeg.edu</span>
                 </a>
-              </div>
-            </div>
-
-            {/* Column 2 - WhatsApp Contacts */}
-            <div className="space-y-8">
-              <div>
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 bg-green-500/20 rounded-lg flex items-center justify-center">
-                    <MessageCircle className="w-5 h-5 text-green-400" />
-                  </div>
-                  <h3 className="text-sm font-bold tracking-wider text-gray-400">WHATSAPP</h3>
-                </div>
                 
-                <div className="space-y-6">
-                  {/* Contact 1 */}
-                  <div className="group relative p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:border-orange-500/50 transition-all duration-300 hover:bg-white/10">
-                    <div className="absolute top-3 right-3">
-                      <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                    </div>
-                    <p className="text-xs text-gray-400 mb-2 uppercase tracking-wider">Directora de Negocios y Operaciones</p>
-                    <a 
-                      href="https://wa.me/18099379410" 
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-xl font-bold text-white group-hover:text-orange-400 transition-colors flex items-center gap-2"
-                    >
-                      Doris Villarreal
-                      <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                    </a>
+                <div className="flex items-start gap-3 text-sm text-gray-400">
+                  <div className="w-8 h-8 bg-cyan-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <MapPin className="w-4 h-4 text-cyan-400" />
                   </div>
-                  
-                  {/* Contact 2 */}
-                  <div className="group relative p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:border-cyan-500/50 transition-all duration-300 hover:bg-white/10">
-                    <div className="absolute top-3 right-3">
-                      <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                    </div>
-                    <p className="text-xs text-gray-400 mb-2 uppercase tracking-wider">Directora Comercial</p>
-                    <a 
-                      href="https://wa.me/18099379410" 
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors flex items-center gap-2"
-                    >
-                      Patricia Armas
-                      <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                    </a>
-                  </div>
+                  <span>Santo Domingo, República Dominicana</span>
                 </div>
               </div>
             </div>
 
-            {/* Column 3 - Sitemap */}
-            <div>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 bg-orange-500/20 rounded-lg flex items-center justify-center">
-                  <MapPin className="w-5 h-5 text-orange-400" />
-                </div>
-                <h3 className="text-sm font-bold tracking-wider text-gray-400">MAPA | CONTENIDO</h3>
-              </div>
-              
-              <nav className="grid grid-cols-1 gap-2">
-                {mapaSitio.map((item, index) => (
+            {/* Column 2 - Sobre EEG (2 cols) */}
+            <div className="lg:col-span-2">
+              <h3 className="text-sm font-bold tracking-wider text-orange-400 mb-6 flex items-center gap-2">
+                <div className="w-1 h-4 bg-orange-400 rounded-full"></div>
+                SOBRE EEG
+              </h3>
+              <nav className="space-y-2">
+                {sobreEEG.map((item, index) => (
                   <a 
                     key={index}
                     href={item.href}
-                    className="group flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5 transition-all duration-200 border border-transparent hover:border-white/10"
+                    className="group flex items-center gap-2 text-sm text-gray-300 hover:text-white transition-colors py-2"
                   >
-                    <div className="w-1.5 h-1.5 rounded-full bg-orange-400 group-hover:scale-150 transition-transform"></div>
-                    <span className="text-sm text-gray-300 group-hover:text-white transition-colors flex-1">
-                      {item.name}
-                    </span>
-                    <ChevronRight className="w-4 h-4 text-gray-600 group-hover:text-orange-400 group-hover:translate-x-1 transition-all" />
+                    <ChevronRight className="w-4 h-4 text-orange-400/50 group-hover:text-orange-400 group-hover:translate-x-1 transition-all" />
+                    <span>{item.name}</span>
                   </a>
                 ))}
               </nav>
             </div>
+
+            {/* Column 3 - Programas (2 cols) */}
+            <div className="lg:col-span-2">
+              <h3 className="text-sm font-bold tracking-wider text-cyan-400 mb-6 flex items-center gap-2">
+                <div className="w-1 h-4 bg-cyan-400 rounded-full"></div>
+                PROGRAMAS
+              </h3>
+              <nav className="space-y-2">
+                {programasAcademicos.map((item, index) => (
+                  <a 
+                    key={index}
+                    href={item.href}
+                    className="group flex items-center gap-2 text-sm text-gray-300 hover:text-white transition-colors py-2"
+                  >
+                    <ChevronRight className="w-4 h-4 text-cyan-400/50 group-hover:text-cyan-400 group-hover:translate-x-1 transition-all" />
+                    <span>{item.name}</span>
+                  </a>
+                ))}
+              </nav>
+            </div>
+
+            {/* Column 4 - Servicios (2 cols) */}
+            <div className="lg:col-span-2">
+              <h3 className="text-sm font-bold tracking-wider text-orange-400 mb-6 flex items-center gap-2">
+                <div className="w-1 h-4 bg-orange-400 rounded-full"></div>
+                SERVICIOS
+              </h3>
+              <nav className="space-y-2">
+                {servicios.map((item, index) => (
+                  <a 
+                    key={index}
+                    href={item.href}
+                    className="group flex items-center gap-2 text-sm text-gray-300 hover:text-white transition-colors py-2"
+                  >
+                    <ChevronRight className="w-4 h-4 text-orange-400/50 group-hover:text-orange-400 group-hover:translate-x-1 transition-all" />
+                    <span>{item.name}</span>
+                  </a>
+                ))}
+              </nav>
+            </div>
+
+            {/* Column 5 - Recursos y Soporte (3 cols) */}
+            <div className="lg:col-span-3">
+              <div className="space-y-8">
+                {/* Recursos */}
+                <div>
+                  <h3 className="text-sm font-bold tracking-wider text-cyan-400 mb-6 flex items-center gap-2">
+                    <div className="w-1 h-4 bg-cyan-400 rounded-full"></div>
+                    RECURSOS
+                  </h3>
+                  <nav className="space-y-2">
+                    {recursos.map((item, index) => (
+                      <a 
+                        key={index}
+                        href={item.href}
+                        className="group flex items-center gap-2 text-sm text-gray-300 hover:text-white transition-colors py-2"
+                      >
+                        <ChevronRight className="w-4 h-4 text-cyan-400/50 group-hover:text-cyan-400 group-hover:translate-x-1 transition-all" />
+                        <span>{item.name}</span>
+                      </a>
+                    ))}
+                  </nav>
+                </div>
+
+                {/* Soporte */}
+                {/* <div>
+                  <h3 className="text-sm font-bold tracking-wider text-orange-400 mb-6 flex items-center gap-2">
+                    <div className="w-1 h-4 bg-orange-400 rounded-full"></div>
+                    SOPORTE
+                  </h3>
+                  <nav className="space-y-2">
+                    {soporte.map((item, index) => (
+                      <a 
+                        key={index}
+                        href={item.href}
+                        className="group flex items-center gap-2 text-sm text-gray-300 hover:text-white transition-colors py-2"
+                      >
+                        <ChevronRight className="w-4 h-4 text-orange-400/50 group-hover:text-orange-400 group-hover:translate-x-1 transition-all" />
+                        <span>{item.name}</span>
+                      </a>
+                    ))}
+                  </nav>
+                </div> */}
+              </div>
+            </div>
           </div>
 
-          {/* Social Media Bar */}
+          {/* Bottom Section */}
           <div className="mt-20 pt-12 border-t border-white/10">
             <div className="flex flex-col md:flex-row items-center justify-between gap-8">
               {/* Social Icons */}
@@ -223,6 +275,18 @@ export default function Footer() {
                   <MessageCircle className="w-5 h-5 text-gray-400 group-hover:text-green-400 transition-colors" />
                   <div className="absolute inset-0 rounded-xl bg-green-500/0 group-hover:bg-green-500/20 blur-xl transition-all duration-300"></div>
                 </a>
+              </div>
+
+              {/* Legal Links */}
+              <div className="flex flex-wrap items-center justify-center gap-4 text-xs text-gray-500">
+                {legal.map((item, index) => (
+                  <React.Fragment key={index}>
+                    <a href={item.href} className="hover:text-white transition-colors">
+                      {item.name}
+                    </a>
+                    {index < legal.length - 1 && <span>•</span>}
+                  </React.Fragment>
+                ))}
               </div>
 
               {/* Copyright */}
