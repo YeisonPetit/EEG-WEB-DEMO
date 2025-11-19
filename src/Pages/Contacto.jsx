@@ -324,7 +324,7 @@ export default function Contacto() {
                   {/* Imagen de la persona como fondo */}
                   <div className="absolute inset-0">
                     <img 
-                      src="/ruta/a/foto-doris.jpg"
+                      src="/doris"
                       alt="Doris Villarreal"
                       className="w-full h-full object-cover object-center"
                     />
@@ -364,7 +364,7 @@ export default function Contacto() {
 
                     {/* WhatsApp Button */}
                     <a
-                      href="https://wa.me/18293202284"
+                      href="https://api.whatsapp.com/send/?phone=18293202284&text=Contacto+Web+EEG+Saludos&type=phone_number&app_absent=0"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-3 bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-500 hover:to-orange-400 text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 shadow-lg hover:shadow-orange-500/50 w-fit"
@@ -393,7 +393,7 @@ export default function Contacto() {
                   {/* Imagen de la persona como fondo */}
                   <div className="absolute inset-0">
                     <img 
-                      src="/meet1.jpg"
+                      src="/patricia"
                       alt="Patricia Armas"
                       className="w-full h-full object-cover object-center"
                     />
@@ -433,7 +433,7 @@ export default function Contacto() {
 
                     {/* WhatsApp Button */}
                     <a
-                      href="https://wa.me/18099311204"
+                      href="https://api.whatsapp.com/send/?phone=18099311204&text=Contacto+Web+EEG+Saludos&type=phone_number&app_absent=0"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-3 bg-gradient-to-r from-cyan-600 to-cyan-500 hover:from-cyan-500 hover:to-cyan-400 text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 shadow-lg hover:shadow-cyan-500/50 w-fit"
