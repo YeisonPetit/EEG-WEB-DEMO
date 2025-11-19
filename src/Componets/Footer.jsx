@@ -47,9 +47,9 @@ export default function Footer() {
 //   ];
 
   const legal = [
-    { name: "Política de Privacidad", href: "#" },
-    { name: "Política de Cookies", href: "#" },
-    { name: "Términos y Condiciones", href: "#" }
+    { name: "FAQs", href: "/FAQs" },
+    { name: "Política de Cookies", href: "/cookies" },
+    { name: "Política de Privacidad", href: "/privacidad" }
   ];
 
   return (

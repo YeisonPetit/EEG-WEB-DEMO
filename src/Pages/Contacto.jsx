@@ -317,40 +317,143 @@ export default function Contacto() {
                 <p className="text-gray-400 mb-8">Escríbenos por WhatsApp para atención inmediata</p>
               </div>
 
-              {whatsappContacts.map((contact, index) => (
-                <a
-                  key={index}
-                  href={`https://wa.me/${contact.phone}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group block relative bg-slate-900/50 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-green-500/50 transition-all duration-300 hover:scale-105"
-                >
-                  <div className="absolute top-4 right-4">
-                    <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+              {/* Doris Villarreal */}
+              <div className="relative overflow-hidden rounded-3xl shadow-2xl group hover:scale-[1.02] transition-all duration-500">
+                {/* Background Image con overlay */}
+                <div className="relative h-96">
+                  {/* Imagen de la persona como fondo */}
+                  <div className="absolute inset-0">
+                    <img 
+                      src="/ruta/a/foto-doris.jpg"
+                      alt="Doris Villarreal"
+                      className="w-full h-full object-cover object-center"
+                    />
                   </div>
                   
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="w-16 h-16 bg-green-500/20 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-                      <MessageCircle className="w-8 h-8 text-green-400" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-white group-hover:text-green-400 transition-colors mb-1">
-                        {contact.name}
-                      </h3>
-                      <p className="text-sm text-gray-400">{contact.role}</p>
+                  {/* Overlay gradient mejorado - más suave */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-900/60 to-slate-950/80"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/100 via-slate-950/70 to-transparent"></div>
+                  
+                  {/* Overlay sólido en la parte inferior */}
+                  <div className="absolute bottom-0 left-0 right-0 h-2/3 bg-gradient-to-t from-slate-950 to-transparent"></div>
+
+                  {/* Logo pequeño */}
+                  <div className="absolute top-6 left-6 z-10">
+                    <div className="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center border border-white/20">
+                      <span className="text-white font-black text-xl">EEG</span>
                     </div>
                   </div>
 
-                  <div className="flex items-center justify-between pt-4 border-t border-white/10">
-                    <span className="text-sm text-gray-400">Chatear en WhatsApp</span>
-                    <div className="w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center group-hover:bg-green-500/30 transition-colors">
-                      <svg className="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 24 24">
+                  {/* Contenido */}
+                  <div className="relative z-10 p-8 h-full flex flex-col justify-end">
+                    {/* Nombre y cargo */}
+                    <div className="mb-6">
+                      <h3 className="text-5xl font-black text-white mb-2 leading-tight">
+                        Doris<br/>Villarreal
+                      </h3>
+                      <div className="w-16 h-1 bg-orange-500 mb-4"></div>
+                      <p className="text-orange-400 font-bold text-sm uppercase tracking-wider">
+                        Directora de Negocios y Operaciones
+                      </p>
+                    </div>
+
+                    {/* Descripción */}
+                    <p className="text-gray-300 text-sm mb-6 max-w-md leading-relaxed">
+                      Especialista en estrategia empresarial con más de 15 años de experiencia en consultoría y desarrollo organizacional.
+                    </p>
+
+                    {/* WhatsApp Button */}
+                    <a
+                      href="https://wa.me/18293202284"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-3 bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-500 hover:to-orange-400 text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 shadow-lg hover:shadow-orange-500/50 w-fit"
+                    >
+                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
                       </svg>
+                      <span className="text-sm">+1 (829) 320-2284</span>
+                    </a>
+
+                    {/* Website/Email pequeño */}
+                    <p className="text-gray-500 text-xs mt-4">
+                      dvillarreal@eeg.edu
+                    </p>
+                  </div>
+
+                  {/* Decorative element */}
+                  <div className="absolute bottom-0 right-0 w-64 h-64 bg-gradient-to-tl from-orange-500/20 to-transparent rounded-tl-full"></div>
+                </div>
+              </div>
+
+              {/* Patricia Armas */}
+              <div className="relative overflow-hidden rounded-3xl shadow-2xl group hover:scale-[1.02] transition-all duration-500">
+                {/* Background Image con overlay */}
+                <div className="relative h-96">
+                  {/* Imagen de la persona como fondo */}
+                  <div className="absolute inset-0">
+                    <img 
+                      src="/meet1.jpg"
+                      alt="Patricia Armas"
+                      className="w-full h-full object-cover object-center"
+                    />
+                  </div>
+                  
+                  {/* Overlay gradient mejorado - más suave */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-900/60 to-slate-950/80"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/100 via-slate-950/70 to-transparent"></div>
+                  
+                  {/* Overlay sólido en la parte inferior */}
+                  <div className="absolute bottom-0 left-0 right-0 h-2/3 bg-gradient-to-t from-slate-950 to-transparent"></div>
+
+                  {/* Logo pequeño */}
+                  <div className="absolute top-6 left-6 z-10">
+                    <div className="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center border border-white/20">
+                      <span className="text-white font-black text-xl">EEG</span>
                     </div>
                   </div>
-                </a>
-              ))}
+
+                  {/* Contenido */}
+                  <div className="relative z-10 p-8 h-full flex flex-col justify-end">
+                    {/* Nombre y cargo */}
+                    <div className="mb-6">
+                      <h3 className="text-5xl font-black text-white mb-2 leading-tight">
+                        Patricia<br/>Armas
+                      </h3>
+                      <div className="w-16 h-1 bg-cyan-500 mb-4"></div>
+                      <p className="text-cyan-400 font-bold text-sm uppercase tracking-wider">
+                        Directora Comercial
+                      </p>
+                    </div>
+
+                    {/* Descripción */}
+                    <p className="text-gray-300 text-sm mb-6 max-w-md leading-relaxed">
+                      Experta en desarrollo comercial y gestión de relaciones corporativas, enfocada en crear alianzas estratégicas de valor.
+                    </p>
+
+                    {/* WhatsApp Button */}
+                    <a
+                      href="https://wa.me/18099311204"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-3 bg-gradient-to-r from-cyan-600 to-cyan-500 hover:from-cyan-500 hover:to-cyan-400 text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 shadow-lg hover:shadow-cyan-500/50 w-fit"
+                    >
+                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                      </svg>
+                      <span className="text-sm">+1 (809) 931-1204</span>
+                    </a>
+
+                    {/* Website/Email pequeño */}
+                    <p className="text-gray-500 text-xs mt-4">
+                      parmas@eeg.edu
+                    </p>
+                  </div>
+
+                  {/* Decorative element */}
+                  <div className="absolute bottom-0 right-0 w-64 h-64 bg-gradient-to-tl from-cyan-500/20 to-transparent rounded-tl-full"></div>
+                </div>
+              </div>
 
               {/* Map Placeholder */}
               <div className="bg-slate-900/50 backdrop-blur-sm rounded-2xl p-8 border border-white/10">

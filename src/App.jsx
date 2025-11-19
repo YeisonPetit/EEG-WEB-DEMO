@@ -1,26 +1,3 @@
-// import React from 'react'
-// import Header from './Componets/Header.jsx'
-// import Hero from './Componets/Hero.jsx'
-// import LandingSections from './Componets/LandingSections.jsx'
-// import Footer from './Componets/Footer.jsx'
-
-
-
-
-// function App() {
-
-//   return (
-//     <>
-//     <Header />
-//     <Hero />
-//     <LandingSections />
-//     <Footer />
-//     </>
-//   )
-// }
-
-// export default App
-
 import { Routes, Route } from "react-router-dom";
 
 // Páginas
@@ -28,10 +5,15 @@ import Home from "./Pages/Home";
 // import Programas from "./Pages/Programas";
 // import SobreNosotros from "./Pages/SobreNosotros";
 import Contacto from "./Pages/Contacto";
+import FAQs from "./Pages/FAQs";
+import Cookies from "./Pages/Cookies";
+import Privacidad from "./Pages/Privacidad";
+
 
 // Componentes
 import Header from "./Componets/Header";
 import Footer from "./Componets/Footer";
+import { Cookie } from "lucide-react";
 
 function App() {
   return (
@@ -43,6 +25,9 @@ function App() {
         {/* <Route path="/programas" element={<Programas />} /> */}
         {/* <Route path="/sobre-nosotros" element={<SobreNosotros />} /> */}
         <Route path="/contacto" element={<Contacto />} />
+        <Route path="/FAQs" element={<FAQs />} />
+        <Route path="/cookies" element={<Cookies />} />
+        <Route path="/Privacidad" element={<Privacidad />} />
       </Routes>
 
       <Footer />

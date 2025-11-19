@@ -1,31 +1,32 @@
 @import "tailwindcss";
 
+/* Fuente global */
 body {
   font-family: "Montserrat", sans-serif;
 }
 
+/* ============================
+       SCROLL INFINITO
+   ============================ */
+
+/* Animación hacia la izquierda */
 @keyframes scroll {
-	0% {
-		transform: translateX(0);
-	}
-	100% {
-		transform: translateX(-50%);
-	}
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
+/* Contenedor animado hacia la izquierda */
 .animate-scroll {
-	animation: scroll 10s linear infinite;
+  animation: scroll 20s linear infinite;
+  will-change: transform;
 }
 
-@keyframes scroll {
-	0% {
-		transform: translateX(0);
-	}
-	100% {
-		transform: translateX(-50%);
-	}
-}
-
+/* Contenedor animado hacia la derecha */
 .animate-scroll-reverse {
-	animation: scroll 10s linear infinite reverse;
+  animation: scroll 20s linear infinite reverse;
+  will-change: transform;
 }
