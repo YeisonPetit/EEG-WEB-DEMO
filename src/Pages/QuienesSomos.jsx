@@ -1,10 +1,38 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { 
   Award, Users, TrendingUp, Target, BookOpen, Building2, 
-  Globe, GraduationCap, Briefcase, CheckCircle, Quote, Sparkles
+  Globe, GraduationCap, Briefcase, CheckCircle, Quote, Sparkles,
+  ChevronLeft, ChevronRight
 } from 'lucide-react';
 
 export default function SomosEEG() {
+  const [activeYear, setActiveYear] = useState(0);
+  const timelineRefs = useRef([]);
+
+  useEffect(() => {
+    const observers = timelineRefs.current.map((ref, index) => {
+      if (!ref) return null;
+      
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate-fade-in-up');
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+      
+      observer.observe(ref);
+      return observer;
+    });
+
+    return () => {
+      observers.forEach((observer) => observer?.disconnect());
+    };
+  }, []);
+
   const stats = [
     {
       icon: Briefcase,
@@ -48,21 +76,89 @@ export default function SomosEEG() {
   ];
 
   const timeline = [
-    { year: '2001', label: 'Inicio' },
-    { year: '2005', label: '' },
-    { year: '2009', label: '' },
-    { year: '2012', label: '' },
-    { year: '2013', label: '' },
-    { year: '2017', label: '' },
-    { year: '2020', label: '' },
-    { year: '2025', label: 'Actualidad' }
+    { 
+      year: '2000', 
+      label: 'La inspiración toca a la puerta',
+      title: 'La inspiración toca a la puerta: buscando soluciones',
+      quote: '"La necesidad es la madre del ingenio"',
+      description: 'Nuestro actual CEO, José Luis Falcón, decide llevar a las aulas su experiencia en la banca y los conocimientos adquiridos en Stetson University, en el área de finanzas y mercadeo.'
+    },
+    { 
+      year: '2002', 
+      label: 'Poniendo los pilares',
+      title: 'Poniendo los pilares',
+      quote: '"Cuando la oportunidad se encuentra con la preparación"',
+      description: 'Durante su carrera financiera y en una posición directiva, José Luis Falcón detectó brechas en las competencias profesionales de muchos gerentes e identificó la necesidad de capacitaciones prácticas. Con esto en mente, y gracias a la colaboración de un grupo de talentosos profesionales, en el año 2002 se funda el Instituto Venezolano de Gerencia (IVG) Escuela de Negocios en la ciudad de Caracas, Venezuela, con la finalidad de aportar soluciones prácticas y "más teoría".'
+    },
+    { 
+      year: '2011-2012', 
+      label: 'Subiendo la escalera',
+      title: 'Subiendo la escalera',
+      quote: '"El crecimiento es intencional"',
+      description: '¡Llegamos a España! En el 2011, el grupo IVG decide desarrollar el proyecto Escuela Europea de Gerencia en España. En el año 2012, Sharon Manno y José Luis Falcón crean la Metodología MATROP® para capacitaciones efectivas orientadas al desplazamiento de hábitos y conductas y al logro de indicadores de gestión.'
+    },
+    { 
+      year: '2011-2014', 
+      label: 'Navegando aguas turbulentas',
+      title: 'España. Navegando aguas turbulentas y aprendiendo en el Caribe',
+      quote: '"El coraje no es tener la fortaleza de seguir adelante; es seguir adelante cuando no tienes la fuerza"',
+      description: 'Las dificultades económicas del momento plantean la necesidad de explorar otros espacios. Apertura de la primera oficina en Panamá e inicio de operaciones en República Dominicana con el primer proyecto de Ventas Consultivas para la Ferretería Haché.'
+    },
+    { 
+      year: '2015-2017', 
+      label: 'Expandiendo y mejorando',
+      title: 'Expandiendo y mejorando',
+      quote: '"La medida de lo que somos es lo que hacemos con lo que tenemos"',
+      description: 'En el año 2015 la EEG abre las puertas de su primera oficina en República Dominicana, ubicada en Spring Center. En el 2017, la EEG da un paso decisivo en términos de calidad obteniendo la prestigiosa certificación de calidad ISO 29990.'
+    },
+    { 
+      year: '2018-2019', 
+      label: 'La semilla comienza a dar frutos',
+      title: 'La semilla comienza a dar frutos',
+      quote: '"Cuando creemos, creamos"',
+      description: 'En el año 2018, la EEG inaugura nuevas instalaciones en Naco, Santo Domingo y se expande la oferta de programas, consultoría y soluciones de tecnología. En el 2019, la EEG establece alianzas con el Centro Europeo de Postgrados y con el Centro Internacional de Gobierno y Marketing Político de la Universidad Camilo José Cela de Madrid.'
+    },
+    { 
+      year: '2020-2021', 
+      label: 'Aportando para el mundo',
+      title: 'Aportando para el mundo',
+      quote: '"El carácter se manifiesta en los grandes momentos, pero se construye en los pequeños"',
+      description: 'Tras un año de pandemia, la EEG decide arriesgarse y hacer una inversión en talento humano, tecnología, marketing y procesos, en la búsqueda de un crecimiento sostenido con miras a la internacionalización y obtiene la certificación internacional de calidad para organizaciones educativas ISO 21001.'
+    },
+    { 
+      year: '2022', 
+      label: 'Hasta el infinito…',
+      title: 'Hasta el infinito…',
+      quote: '"Si tus acciones inspiran a los demás a soñar, aprender y hacer más; eres un líder"',
+      description: 'El equipo crece, se consolida y sirve al mundo. Nuestro principal elemento diferenciador, además de la calidad, la metodología y la idoneidad de los contenidos, es un equipo que sabe brindar una excelente experiencia de servicio. De esta manera, el equipo administrativo, académico, de consultores y coaches, contribuye con el proceso de aprendizaje y garantiza el crecimiento profesional de todos los participantes. Es su pasión, y no solo conocen el camino, recorren el camino y muestran el camino.'
+    }
   ];
 
   return (
     <div className="min-h-screen bg-slate-950">
+      <style>{`
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        
+        .animate-fade-in-up {
+          animation: fadeInUp 0.6s ease-out forwards;
+        }
+        
+        .timeline-item {
+          opacity: 0;
+        }
+      `}</style>
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
-        {/* Fondo animado\ */}
+        {/* Fondo animado mejorado */}
         <div className="absolute inset-0 bg-gradient-to-br from-orange-600/20 via-slate-950 to-cyan-600/20"></div>
         <div className="absolute inset-0">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-orange-500/20 via-transparent to-transparent"></div>
@@ -75,33 +171,32 @@ export default function SomosEEG() {
           <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-cyan-400 rounded-full animate-pulse delay-300"></div>
           <div className="absolute bottom-1/4 left-1/3 w-1.5 h-1.5 bg-orange-300 rounded-full animate-pulse delay-700"></div>
           <div className="absolute bottom-1/3 right-1/4 w-2 h-2 bg-cyan-300 rounded-full animate-pulse delay-500"></div>
-          
         </div>
 
         <div className="container mx-auto px-6 relative z-10 py-20">
           <div className="max-w-7xl mx-auto">
             {/* Título principal centrado */}
             <div className="text-center mb-16">
-              <div className="inline-block mt-3 mb-6">
-                <span className="px-6 py-3 bg-linear-to-r from-orange-500/20 to-cyan-500/20 rounded-full border border-orange-500/30 text-orange-300 text-sm font-bold uppercase tracking-wider">
+              {/* <div className="inline-block mb-6">
+                <span className="px-6 py-3 bg-gradient-to-r from-orange-500/20 to-cyan-500/20 rounded-full border border-orange-500/30 text-orange-300 text-sm font-bold uppercase tracking-wider">
                   Escuela Europea de Gerencia
                 </span>
-              </div>
+              </div> */}
               <h1 className="text-6xl md:text-7xl lg:text-8xl font-black text-white mb-8 leading-none">
-                Comprometidos
+                Llevamos años comprometidos
                 <br />
                 <span className="bg-gradient-to-r from-orange-400 to-cyan-400 bg-clip-text text-transparent">
                   con tu éxito
                 </span>
               </h1>
-              <p className="text-2xl md:text-3xl text-gray-300 max-w-3xl mx-auto font-light">
+              {/* <p className="text-2xl md:text-3xl text-gray-300 max-w-3xl mx-auto font-light">
                 Casi tres décadas transformando líderes y organizaciones en Iberoamérica
-              </p>
+              </p> */}
             </div>
 
             {/* Grid de contenido */}
             <div className="grid lg:grid-cols-2 gap-12 items-start max-w-6xl mx-auto">
-              {/* Imagen destacada */}
+              {/* Imagend */}
               <div className="relative order-2 lg:order-1">
                 <div className="relative aspect-[4/3] rounded-3xl overflow-hidden border border-white/20 shadow-2xl group">
                   {/* Gradiente de fondo animado */}
@@ -118,7 +213,7 @@ export default function SomosEEG() {
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-transparent"></div>
                   
                   {/* Stats overlay */}
-                  <div className="absolute bottom-0 left-0 right-0 p-8">
+                  {/* <div className="absolute bottom-0 left-0 right-0 p-8">
                     <div className="grid grid-cols-3 gap-4">
                       <div className="text-center">
                         <p className="text-3xl font-black text-white mb-1">23+</p>
@@ -133,7 +228,7 @@ export default function SomosEEG() {
                         <p className="text-xs text-cyan-300 uppercase tracking-wider">Egresados</p>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                   
                   {/* Elementos decorativos */}
                   <div className="absolute top-6 right-6 w-24 h-24 bg-orange-500/30 rounded-full blur-3xl animate-pulse"></div>
@@ -154,7 +249,7 @@ export default function SomosEEG() {
                     <div>
                       <h3 className="text-xl font-bold text-white mb-3">Nuestra Esencia</h3>
                       <p className="text-gray-300 leading-relaxed">
-                        Escuela de negocios española con presencia en Iberoamérica, especializada en la formación de líderes e impacto positivo en organizaciones.
+                       La Escuela Europea de Gerencia es una escuela de negocios española con presencia y alcance en varios países de Iberoamérica. Su trayectoria en la formación de líderes y en el impacto positivo a las organizaciones suma ya casi tres décadas.
                       </p>
                     </div>
                   </div>
@@ -169,14 +264,14 @@ export default function SomosEEG() {
                     <div>
                       <h3 className="text-xl font-bold text-white mb-3">Nuestra Misión</h3>
                       <p className="text-gray-300 leading-relaxed">
-                        Diseñar soluciones holísticas, sencillas y contextualizadas para acompañar a organizaciones y líderes a lograr sus objetivos.
+                        Su misión es diseñar soluciones holísticas, multifactoriales pero sencillas, asequibles y contextualizadas para acompañar a las organizaciones y a los líderes empresariales a lograr sus objetivos.
                       </p>
                     </div>
                   </div>
                 </div>
 
                 {/* Card 3 - CTA */}
-                <div className="bg-gradient-to-br from-orange-500/20 to-cyan-500/20 backdrop-blur-sm rounded-2xl p-8 border border-orange-500/30">
+                {/* <div className="bg-gradient-to-br from-orange-500/20 to-cyan-500/20 backdrop-blur-sm rounded-2xl p-8 border border-orange-500/30">
                   <div className="flex items-center justify-between">
                     <div>
                       <p className="text-white font-bold text-lg mb-2">¿Listo para transformar tu organización?</p>
@@ -186,7 +281,7 @@ export default function SomosEEG() {
                       <TrendingUp className="w-6 h-6 text-orange-400" />
                     </div>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
@@ -223,7 +318,7 @@ export default function SomosEEG() {
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold text-white text-center mb-16">
-              Nuestras estadísticas hablan por sí solas
+              Nuestras estadísticas en un formato bonito
             </h2>
             
             <div className="grid md:grid-cols-2 gap-8">
@@ -283,36 +378,101 @@ export default function SomosEEG() {
               </div>
             </div>
 
-            {/* Timeline */}
+            {/* Timeline Interactivo */}
             <div className="mb-12">
               <h3 className="text-3xl font-bold text-white mb-8 text-center">Nuestra Trayectoria</h3>
-              <div className="relative">
-                {/* Línea horizontal */}
-                <div className="absolute top-6 left-0 right-0 h-0.5 bg-gradient-to-r from-orange-500 via-cyan-500 to-orange-500"></div>
-                
-                {/* Puntos del timeline */}
-                <div className="relative flex justify-between">
+              
+              <div className="max-w-6xl mx-auto">
+                {/* Selector de años */}
+                <div className="flex flex-wrap justify-center gap-3 mb-8">
                   {timeline.map((item, index) => (
-                    <div key={index} className="flex flex-col items-center">
-                      <div className={`w-12 h-12 rounded-full ${
-                        index === 0 || index === timeline.length - 1
-                          ? 'bg-gradient-to-br from-orange-500 to-orange-600 shadow-lg shadow-orange-500/50'
-                          : 'bg-gray-600'
-                      } border-4 border-slate-950 flex items-center justify-center mb-4 relative z-10`}>
-                        {(index === 0 || index === timeline.length - 1) && (
-                          <div className="w-3 h-3 bg-white rounded-full animate-pulse"></div>
-                        )}
-                      </div>
-                      <p className={`text-sm font-bold ${
-                        index === 0 || index === timeline.length - 1 ? 'text-orange-400' : 'text-gray-500'
-                      }`}>
-                        {item.year}
-                      </p>
-                      {item.label && (
-                        <p className="text-xs text-gray-400 mt-1">{item.label}</p>
-                      )}
-                    </div>
+                    <button
+                      key={index}
+                      onClick={() => setActiveYear(index)}
+                      className={`px-6 py-3 rounded-xl font-bold transition-all duration-300 ${
+                        activeYear === index
+                          ? 'bg-gradient-to-r from-orange-500 to-cyan-500 text-white shadow-lg shadow-orange-500/50 scale-110'
+                          : 'bg-slate-800/50 text-gray-400 hover:text-white hover:bg-slate-800 border border-white/10'
+                      }`}
+                    >
+                      {item.year}
+                    </button>
                   ))}
+                </div>
+
+                {/* Contenedor de contenido */}
+                <div className="relative bg-gradient-to-br from-slate-900/80 to-slate-900/40 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-white/10 min-h-[400px]">
+                  {/* Navegación */}
+                  <div className="absolute top-1/2 -translate-y-1/2 left-4 right-4 flex justify-between pointer-events-none">
+                    <button
+                      onClick={() => setActiveYear(Math.max(0, activeYear - 1))}
+                      disabled={activeYear === 0}
+                      className={`pointer-events-auto w-12 h-12 rounded-full flex items-center justify-center transition-all ${
+                        activeYear === 0
+                          ? 'bg-slate-800/30 text-gray-600 cursor-not-allowed'
+                          : 'bg-slate-800/80 text-white hover:bg-orange-500 hover:scale-110'
+                      }`}
+                    >
+                      <ChevronLeft className="w-6 h-6" />
+                    </button>
+                    <button
+                      onClick={() => setActiveYear(Math.min(timeline.length - 1, activeYear + 1))}
+                      disabled={activeYear === timeline.length - 1}
+                      className={`pointer-events-auto w-12 h-12 rounded-full flex items-center justify-center transition-all ${
+                        activeYear === timeline.length - 1
+                          ? 'bg-slate-800/30 text-gray-600 cursor-not-allowed'
+                          : 'bg-slate-800/80 text-white hover:bg-cyan-500 hover:scale-110'
+                      }`}
+                    >
+                      <ChevronRight className="w-6 h-6" />
+                    </button>
+                  </div>
+
+                  {/* Contenido animado */}
+                  <div className="space-y-6" key={activeYear}>
+                    {/* Año destacado */}
+                    <div className="flex items-center justify-center gap-4 mb-6">
+                      <div className="h-px flex-1 bg-gradient-to-r from-transparent to-orange-500/50"></div>
+                      <span className="px-8 py-3 bg-gradient-to-r from-orange-500/20 to-cyan-500/20 rounded-full text-orange-400 font-black text-3xl border border-orange-500/30 animate-fade-in-up">
+                        {timeline[activeYear].year}
+                      </span>
+                      <div className="h-px flex-1 bg-gradient-to-l from-transparent to-cyan-500/50"></div>
+                    </div>
+
+                    {/* Título */}
+                    <h4 className="text-3xl md:text-4xl font-bold text-white text-center mb-6 animate-fade-in-up">
+                      {timeline[activeYear].label}
+                    </h4>
+
+                    {/* Quote destacado */}
+                    <div className="bg-gradient-to-r from-orange-500/10 to-cyan-500/10 rounded-2xl p-6 border border-orange-500/20 mb-6 animate-fade-in-up">
+                      <div className="flex items-start gap-4">
+                        <Quote className="w-8 h-8 text-orange-400 flex-shrink-0 mt-1" />
+                        <p className="text-xl md:text-2xl text-cyan-300 italic font-medium">
+                          {timeline[activeYear].quote}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Descripción */}
+                    <p className="text-gray-300 text-lg leading-relaxed text-center max-w-4xl mx-auto animate-fade-in-up">
+                      {timeline[activeYear].description}
+                    </p>
+
+                    {/* Indicador de progreso */}
+                    <div className="flex items-center justify-center gap-2 mt-8">
+                      {timeline.map((_, index) => (
+                        <div
+                          key={index}
+                          className={`h-1.5 rounded-full transition-all duration-300 ${
+                            index === activeYear
+                              ? 'w-12 bg-gradient-to-r from-orange-500 to-cyan-500'
+                              : 'w-1.5 bg-slate-700'
+                          }`}
+                        />
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

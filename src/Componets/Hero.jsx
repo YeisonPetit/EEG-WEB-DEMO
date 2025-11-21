@@ -160,7 +160,7 @@ export default function HeroSection() {
                 ))}
               </div>
               <div>
-                <p className="text-cyan-400 font-bold text-sm">+15,000 líderes</p>
+                <p className="text-cyan-400 font-bold text-sm">+8.600 líderes</p>
                 <p className="text-gray-400 text-xs">ya transformaron su futuro</p>
               </div>
             </div>
@@ -191,7 +191,7 @@ export default function HeroSection() {
                       <Globe className="w-6 h-6 text-cyan-400" />
                     </div>
                     <div>
-                      <p className="text-2xl font-black text-white">12+</p>
+                      <p className="text-2xl font-black text-white">7+</p>
                       <p className="text-xs text-gray-400">Países</p>
                     </div>
                   </div>
@@ -203,7 +203,7 @@ export default function HeroSection() {
                       <Award className="w-6 h-6 text-cyan-400" />
                     </div>
                     <div>
-                      <p className="text-2xl font-black text-white">35+</p>
+                      <p className="text-2xl font-black text-white">23+</p>
                       <p className="text-xs text-gray-400">Años</p>
                     </div>
                   </div>
@@ -215,7 +215,7 @@ export default function HeroSection() {
                       <Users className="w-6 h-6 text-cyan-400" />
                     </div>
                     <div>
-                      <p className="text-2xl font-black text-white">15K+</p>
+                      <p className="text-2xl font-black text-white">+8,6k</p>
                       <p className="text-xs text-gray-400">Graduados</p>
                     </div>
                   </div>
