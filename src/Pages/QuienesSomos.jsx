@@ -55,7 +55,7 @@ export default function SomosEEG() {
     { year: '2013', label: '' },
     { year: '2017', label: '' },
     { year: '2020', label: '' },
-    { year: '2022', label: 'Actualidad' }
+    { year: '2025', label: 'Actualidad' }
   ];
 
   return (
