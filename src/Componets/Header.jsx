@@ -53,7 +53,7 @@ export default class Header extends Component {
 
             {/* Desktop Navigation */}
             <nav className="hidden xl:flex items-center gap-8">
-              <a href="#" className="text-sm font-medium text-white hover:text-orange-400 transition-colors duration-200 relative group">
+              <a href="/QuienesSomos" className="text-sm font-medium text-white hover:text-orange-400 transition-colors duration-200 relative group">
                 Quiénes Somos
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-400 group-hover:w-full transition-all duration-300"></span>
               </a>
@@ -103,11 +103,11 @@ export default class Header extends Component {
           {isMobileMenuOpen && (
             <div className="xl:hidden border-t border-white/10 py-4 animate-fadeInUp">
               <nav className="flex flex-col gap-4">
-                <a href="#" className="text-white hover:text-orange-400 transition-colors py-2 px-4 rounded-lg hover:bg-white/5">
+                <a href="/QuienesSomos" className="text-white hover:text-orange-400 transition-colors py-2 px-4 rounded-lg hover:bg-white/5">
                   Quiénes Somos
                 </a>
-                
-                <a href="#" className="text-white hover:text-orange-400 transition-colors py-2 px-4 rounded-lg hover:bg-white/5">
+
+                <a href="/Servicios" className="text-white hover:text-orange-400 transition-colors py-2 px-4 rounded-lg hover:bg-white/5">
                   Servicios
                 </a>
 

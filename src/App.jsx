@@ -8,6 +8,7 @@ import Contacto from "./Pages/Contacto";
 import FAQs from "./Pages/FAQs";
 import Cookies from "./Pages/Cookies";
 import Privacidad from "./Pages/Privacidad";
+import QuienesSomos from "./Pages/QuienesSomos";
 
 
 // Componentes
@@ -28,6 +29,7 @@ function App() {
         <Route path="/FAQs" element={<FAQs />} />
         <Route path="/cookies" element={<Cookies />} />
         <Route path="/Privacidad" element={<Privacidad />} />
+        <Route path="/quienessomos" element={<QuienesSomos />} />
       </Routes>
 
       <Footer />

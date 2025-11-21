@@ -105,7 +105,7 @@ export default function Contacto() {
             <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-orange-500/20 border border-orange-500/30 mb-6">
               <Sparkles className="w-5 h-5 text-orange-400 animate-pulse" />
               <span className="text-sm font-bold tracking-wider uppercase text-orange-400">
-                Estamos aquí para ti
+                Comprometidos con tu éxito
               </span>
             </div>
             
@@ -331,11 +331,11 @@ export default function Contacto() {
                   </div>
                   
                   {/* Overlay gradient mejorado - más suave */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-900/60 to-slate-950/80"></div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/100 via-slate-950/70 to-transparent"></div>
+                  <div className="absolute inset-0 bg-linear-to-r from-slate-950/95 via-slate-900/60 to-slate-950/80"></div>
+                  <div className="absolute inset-0 bg-linear-to-t from-slate-950/100 via-slate-950/70 to-transparent"></div>
                   
                   {/* Overlay sólido en la parte inferior */}
-                  <div className="absolute bottom-0 left-0 right-0 h-2/3 bg-gradient-to-t from-slate-950 to-transparent"></div>
+                  <div className="absolute bottom-0 left-0 right-0 h-2/3 bg-linear-to-t from-slate-950 to-transparent"></div>
 
                   {/* Logo pequeño */}
                   <div className="absolute top-6 left-6 z-10">

@@ -272,7 +272,7 @@ export default function LandingSections() {
             <Users className="w-10 h-10 text-cyan-400" />
           </div>
           <div>
-            <p className="text-4xl font-black text-white">15K+</p>
+            <p className="text-4xl font-black text-white">+8.6K+</p>
             <p className="text-sm text-gray-400">Graduados</p>
           </div>
         </div>

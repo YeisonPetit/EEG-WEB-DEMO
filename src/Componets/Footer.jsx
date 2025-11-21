@@ -258,7 +258,7 @@ export default function Footer() {
                   <div className="absolute inset-0 rounded-xl bg-pink-500/0 group-hover:bg-pink-500/20 blur-xl transition-all duration-300"></div>
                 </a>
                 <a 
-                  href="#" 
+                  href="https://www.youtube.com/@escuelaeuropeadegerencia" 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group relative w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center border border-white/10 hover:border-red-500/50 transition-all duration-300 hover:bg-red-500/10"
@@ -267,7 +267,7 @@ export default function Footer() {
                   <div className="absolute inset-0 rounded-xl bg-red-500/0 group-hover:bg-red-500/20 blur-xl transition-all duration-300"></div>
                 </a>
                 <a 
-                  href="https://wa.me/18099379410" 
+                  href="https://www.youtube.com/@escuelaeuropeadegerencia" 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group relative w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center border border-white/10 hover:border-green-500/50 transition-all duration-300 hover:bg-green-500/10"
