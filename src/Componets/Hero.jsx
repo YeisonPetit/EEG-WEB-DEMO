@@ -102,9 +102,9 @@ export default function HeroSection() {
           <div className="space-y-8">
             {/* Intro Badge with animation */}
             <div className="animate-fadeIn mt-5">
-              <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-linear-to-r from-cyan-500/20 to-blue-500/20 backdrop-blur-xl border border-cyan-500/30 shadow-lg shadow-cyan-500/20">
+              <div className="inline-flex items-center gap-3 px-5 py-3 rounded-full bg-linear-to-r from-cyan-500/20 to-blue-500/20 backdrop-blur-xl border border-cyan-500/30 shadow-lg shadow-cyan-500/20">
                 <Sparkles className="w-5 h-5 text-orange-700 animate-pulse" />
-                <span className="text-sm font-bold tracking-wider uppercase bg-linear-to-r from-orange-400 to-cyan-400 bg-clip-text text-transparent">
+                <span className="text-[10px] md:text-sm font-bold tracking-wider uppercase bg-linear-to-r from-orange-400 to-cyan-400 bg-clip-text text-transparent">
                   Next Level Leadership
                 </span>
                 <Zap className="w-5 h-5 text-orange-700 animate-pulse" />
@@ -113,15 +113,15 @@ export default function HeroSection() {
 
             {/* Main Title with stagger animation */}
             <div className="space-y-3">
-              <h1 className="text-6xl md:text-8xl font-black leading-none animate-slideUp">
+              <h1 className="text-5xl md:text-8xl font-black leading-none animate-slideUp">
                 <span className="text-white">Lidera la</span>
               </h1>
-              <h1 className="text-6xl md:text-8xl font-black leading-none animate-slideUp" style={{ animationDelay: '0.1s' }}>
+              <h1 className="text-5xl md:text-8xl font-black leading-none animate-slideUp" style={{ animationDelay: '0.1s' }}>
                 <span className="text-transparent bg-clip-text bg-linear-to-r from-orange-900 via-blue-400 to-cyan-500 animate-gradient">
                   revolución
                 </span>
               </h1>
-              <h1 className="text-6xl md:text-7xl font-black leading-none animate-slideUp" style={{ animationDelay: '0.2s' }}>
+              <h1 className="text-5xl md:text-7xl font-black leading-none animate-slideUp" style={{ animationDelay: '0.2s' }}>
                 <span className="text-white">del mañana</span>
               </h1>
             </div>
@@ -134,14 +134,14 @@ export default function HeroSection() {
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4 animate-fadeInUp" style={{ animationDelay: '0.6s' }}>
-              <button className="group cursor-pointer relative px-10 py-5 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold rounded-2xl overflow-hidden hover:shadow-2xl hover:shadow-cyan-500/50 transition-all duration-300 hover:scale-105">
+              <a href='/Servicios' className="group cursor-pointer relative px-5 py-5 bg-linear-to-r from-cyan-500 to-blue-600 text-white font-bold rounded-2xl overflow-hidden hover:shadow-2xl hover:shadow-cyan-500/50 transition-all duration-300 hover:scale-105">
                 <span className="relative z-10 flex items-center justify-center gap-3">
                   Transforma tu carrera
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
                 </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
-              </button>
-              <button className="group cursor-pointer px-10 py-5 bg-white/5 backdrop-blur-xl text-white font-bold rounded-2xl border-2 border-cyan-500/30 hover:bg-white/10 hover:border-cyan-500/50 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-3">
+                <div className="absolute inset-0 bg-linear-to-r from-cyan-400 to-blue-500 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+              </a>
+              <button className="group cursor-pointer px-8 py-5 bg-white/5 backdrop-blur-xl text-white font-bold rounded-2xl border-2 border-cyan-500/30 hover:bg-white/10 hover:border-cyan-500/50 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-3">
                 <Play className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 Ver demo
               </button>
@@ -171,7 +171,7 @@ export default function HeroSection() {
             {/* Main image container with 3D tilt */}
             <div className="relative group">
               {/* Glow effect behind */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-3xl blur-3xl opacity-20 group-hover:opacity-30 transition-opacity duration-500"></div>
+              <div className="absolute -inset-4 bg-linear-to-r from-cyan-500 to-blue-600 rounded-3xl blur-3xl opacity-20 group-hover:opacity-30 transition-opacity duration-500"></div>
               
               {/* Image card */}
               <div className="relative rounded-3xl overflow-hidden border-2 border-cyan-500/20 shadow-2xl transform group-hover:scale-[1.02] transition-transform duration-500">
@@ -182,7 +182,7 @@ export default function HeroSection() {
                 />
                 
                 {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/30 via-transparent to-blue-500/30 mix-blend-overlay"></div>
+                <div className="absolute inset-0 bg-linear-to-tr from-cyan-500/30 via-transparent to-blue-500/30 mix-blend-overlay"></div>
                 
                 {/* Floating stats cards */}
                 <div className="absolute top-8 -left-6 bg-slate-900/90 backdrop-blur-xl rounded-2xl p-4 border border-cyan-500/30 shadow-xl transform hover:scale-110 transition-transform">
@@ -231,7 +231,7 @@ export default function HeroSection() {
       </div>
 
       {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-slate-950 to-transparent"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-linear-to-t from-slate-950 to-transparent"></div>
 
       <style jsx>{`
         @keyframes fadeIn {
@@ -290,16 +290,6 @@ export default function HeroSection() {
             opacity: 0.7;
           }
         }
-
-        @keyframes gradient {
-          0%, 100% {
-            background-position: 0% 50%;
-          }
-          50% {
-            background-position: 100% 50%;
-          }
-        }
-
         .animate-fadeIn {
           animation: fadeIn 1s ease-out;
           animation-fill-mode: both;

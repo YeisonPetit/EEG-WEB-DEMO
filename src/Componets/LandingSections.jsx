@@ -176,7 +176,7 @@ export default function LandingSections() {
             {programs.map((program, index) => (
               <div 
                 key={index}
-                className="group relative bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-cyan-500/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/20"
+                className="group relative w-70 md:w-full bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-cyan-500/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/20"
               >
                 <div className="mb-4 gap-3 flex">
                   <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-cyan-500/10 group-hover:bg-cyan-500/20 transition-colors mb-6">
@@ -248,7 +248,7 @@ export default function LandingSections() {
             <Globe className="w-10 h-10 text-cyan-400" />
           </div>
           <div>
-            <p className="text-4xl font-black text-white">12+</p>
+            <p className="text-4xl font-black text-white">7+</p>
             <p className="text-sm text-gray-400">Países</p>
           </div>
         </div>
@@ -260,7 +260,7 @@ export default function LandingSections() {
             <Award className="w-10 h-10 text-cyan-400" />
           </div>
           <div>
-            <p className="text-4xl font-black text-white">35+</p>
+            <p className="text-4xl font-black text-white">23+</p>
             <p className="text-sm text-gray-400">Años</p>
           </div>
         </div>
@@ -349,11 +349,11 @@ export default function LandingSections() {
               Tu historia de éxito comienza aquí.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="group relative px-10 py-5 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold rounded-xl hover:shadow-2xl hover:shadow-cyan-500/50 transition-all duration-300 flex items-center justify-center gap-3 hover:scale-105 overflow-hidden">
+              <a href='/Contacto' className="group relative px-10 py-5 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold rounded-xl hover:shadow-2xl hover:shadow-cyan-500/50 transition-all duration-300 flex items-center justify-center gap-3 hover:scale-105 overflow-hidden">
                 <span className="relative z-10">Agenda una asesoría</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform relative z-10" />
                 <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-              </button>
+              </a>
               <button className="px-10 py-5 bg-white/10 backdrop-blur-md text-white font-bold rounded-xl border-2 border-white/30 hover:bg-white/20 hover:border-white/50 transition-all duration-300 hover:scale-105">
                 Descargar brochure
               </button>

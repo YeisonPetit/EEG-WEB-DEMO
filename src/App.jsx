@@ -2,13 +2,14 @@ import { Routes, Route } from "react-router-dom";
 
 // Páginas
 import Home from "./Pages/Home";
-// import Programas from "./Pages/Programas";
+import Programas from "./Pages/Programas";
 // import SobreNosotros from "./Pages/SobreNosotros";
 import Contacto from "./Pages/Contacto";
 import FAQs from "./Pages/FAQs";
 import Cookies from "./Pages/Cookies";
 import Privacidad from "./Pages/Privacidad";
 import QuienesSomos from "./Pages/QuienesSomos";
+import Servicios from "./Pages/Servicios";
 
 
 // Componentes
@@ -23,13 +24,14 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        {/* <Route path="/programas" element={<Programas />} /> */}
+        <Route path="/programas" element={<Programas />} />
         {/* <Route path="/sobre-nosotros" element={<SobreNosotros />} /> */}
         <Route path="/contacto" element={<Contacto />} />
         <Route path="/FAQs" element={<FAQs />} />
         <Route path="/cookies" element={<Cookies />} />
         <Route path="/Privacidad" element={<Privacidad />} />
         <Route path="/quienessomos" element={<QuienesSomos />} />
+        <Route path="/servicios" element={<Servicios />} />
       </Routes>
 
       <Footer />

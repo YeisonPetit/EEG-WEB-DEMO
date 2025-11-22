@@ -5,6 +5,19 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  image-rendering: -webkit-optimize-contrast;
+}
+
+body {
+  backface-visibility: hidden;
+}
+
+
 /* ============================
        SCROLL INFINITO
    ============================ */
@@ -19,6 +32,15 @@ body {
   }
 }
 
+@keyframes gradient {
+          0%, 100% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+        }
+
 /* Contenedor animado hacia la izquierda */
 .animate-scroll {
   animation: scroll 20s linear infinite;
@@ -29,4 +51,16 @@ body {
 .animate-scroll-reverse {
   animation: scroll 20s linear infinite reverse;
   will-change: transform;
+}
+
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 70%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradientMove 3s ease infinite;
 }

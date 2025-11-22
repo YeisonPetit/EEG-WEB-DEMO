@@ -56,9 +56,9 @@ export default function Footer() {
     <footer className="relative bg-slate-950 text-white overflow-hidden">
       {/* Animated gradient background */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-orange-600/20 via-slate-950 to-cyan-600/20"></div>
+        <div className="absolute inset-0 bg-linear-to-br from-orange-600/20 via-slate-950 to-cyan-600/20"></div>
         <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-orange-500/10 via-transparent to-cyan-500/10 animate-pulse"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-linear-to-br from-orange-500/10 via-transparent to-cyan-500/10 animate-pulse"></div>
         </div>
       </div>
 
@@ -119,7 +119,7 @@ export default function Footer() {
                 </a>
                 
                 <div className="flex items-start gap-3 text-sm text-gray-400">
-                  <div className="w-8 h-8 bg-cyan-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-8 h-8 bg-cyan-500/20 rounded-lg flex items-center justify-center shrink-0">
                     <MapPin className="w-4 h-4 text-cyan-400" />
                   </div>
                   <span>Santo Domingo, República Dominicana</span>
@@ -234,7 +234,7 @@ export default function Footer() {
           </div>
 
           {/* Bottom Section */}
-          <div className="mt-20 pt-12 border-t border-white/10">
+          <div className="mt-20 pt-10 border-t border-white/10">
             <div className="flex flex-col md:flex-row items-center justify-between gap-8">
               {/* Social Icons */}
               <div className="flex items-center gap-4">
@@ -265,15 +265,6 @@ export default function Footer() {
                 >
                   <Youtube className="w-5 h-5 text-gray-400 group-hover:text-red-400 transition-colors" />
                   <div className="absolute inset-0 rounded-xl bg-red-500/0 group-hover:bg-red-500/20 blur-xl transition-all duration-300"></div>
-                </a>
-                <a 
-                  href="https://www.youtube.com/@escuelaeuropeadegerencia" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group relative w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center border border-white/10 hover:border-green-500/50 transition-all duration-300 hover:bg-green-500/10"
-                >
-                  <MessageCircle className="w-5 h-5 text-gray-400 group-hover:text-green-400 transition-colors" />
-                  <div className="absolute inset-0 rounded-xl bg-green-500/0 group-hover:bg-green-500/20 blur-xl transition-all duration-300"></div>
                 </a>
               </div>
 
