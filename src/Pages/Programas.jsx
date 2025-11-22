@@ -333,7 +333,7 @@ export default function Programas() {
   return (
     <div className="min-h-screen bg-slate-950">
       <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-orange-600/20 via-slate-950 to-cyan-600/20"></div>
+        <div className="absolute inset-0 bg-linear-to-br from-orange-600/20 via-slate-950 to-cyan-600/20"></div>
         <div className="absolute inset-0">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-orange-500/20 via-transparent to-transparent"></div>
           <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-cyan-500/20 via-transparent to-transparent"></div>
@@ -342,14 +342,14 @@ export default function Programas() {
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-5xl mx-auto text-center">
             <div className="inline-block mb-6">
-              <span className="px-6 py-3 bg-gradient-to-r from-orange-500/20 to-cyan-500/20 rounded-full border border-orange-500/30 text-orange-300 text-sm font-bold uppercase tracking-wider">
+              <span className="px-6 py-3 bg-linear-to-r from-orange-500/20 to-cyan-500/20 rounded-full border border-orange-500/30 text-orange-300 text-sm font-bold uppercase tracking-wider">
                 Nuestros Programas
               </span>
             </div>
             <h1 className="text-6xl md:text-7xl font-black text-white mb-6 leading-tight">
               Impulsa tu
               <br />
-              <span className="bg-gradient-to-r from-orange-400 to-cyan-400 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-orange-400 to-cyan-400 bg-clip-text text-transparent">
                 carrera profesional
               </span>
             </h1>
@@ -393,7 +393,7 @@ export default function Programas() {
                   onClick={() => setFiltroActivo(cat.id)}
                   className={`flex items-center gap-2 px-6 py-3 rounded-xl font-bold transition-all duration-300 ${
                     filtroActivo === cat.id
-                      ? 'bg-gradient-to-r from-orange-500 to-cyan-500 text-white shadow-lg shadow-orange-500/30'
+                      ? 'bg-linear-to-r from-orange-500 to-cyan-500 text-white shadow-lg shadow-orange-500/30'
                       : 'bg-slate-800/50 text-gray-400 hover:text-white border border-white/10 hover:border-white/30'
                   }`}
                 >

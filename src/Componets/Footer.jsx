@@ -9,11 +9,11 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const sobreEEG = [
-    { name: "Nuestra Historia", href: "#", icon: Award },
+    { name: "Nuestra Historia", href: "/QuienesSomos", icon: Award },
     { name: "Misión y Visión", href: "#", icon: Sparkles },
     { name: "Acreditaciones", href: "#", icon: ShieldCheck },
     { name: "Alianzas Estratégicas", href: "#", icon: Globe },
-    { name: "Equipo Directivo", href: "#", icon: Users }
+    { name: "Facilitadores", href: "/Facilitadores", icon: Users }
   ];
 
   const programasAcademicos = [

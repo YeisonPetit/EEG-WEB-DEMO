@@ -10,6 +10,10 @@ import Cookies from "./Pages/Cookies";
 import Privacidad from "./Pages/Privacidad";
 import QuienesSomos from "./Pages/QuienesSomos";
 import Servicios from "./Pages/Servicios";
+import Noticias from "./Pages/Noticias"
+import Ayuda from "./Pages/Ayuda"
+import Facilitadores from "./Pages/Facilitadores"
+
 
 
 // Componentes
@@ -32,6 +36,10 @@ function App() {
         <Route path="/Privacidad" element={<Privacidad />} />
         <Route path="/quienessomos" element={<QuienesSomos />} />
         <Route path="/servicios" element={<Servicios />} />
+        <Route path="/Noticias" element={<Noticias />} />
+        <Route path="/Ayuda" element={<Ayuda />} />
+        <Route path="/Facilitadores" element={<Facilitadores />} />
+
       </Routes>
 
       <Footer />

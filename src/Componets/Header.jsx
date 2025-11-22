@@ -63,7 +63,7 @@ export default class Header extends Component {
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-400 group-hover:w-full transition-all duration-300"></span>
               </a>
 
-              <a href="#" className="text-sm font-medium text-white hover:text-orange-400 transition-colors duration-200 relative group">
+              <a href="/Noticias" className="text-sm font-medium text-white hover:text-orange-400 transition-colors duration-200 relative group">
                 Noticias
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-400 group-hover:w-full transition-all duration-300"></span>
               </a>
@@ -71,7 +71,7 @@ export default class Header extends Component {
                 Contacto
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-400 group-hover:w-full transition-all duration-300"></span>
               </a>
-              <a href="#" className="text-sm font-medium text-white hover:text-orange-400 transition-colors duration-200 relative group">
+              <a href="/Ayuda" className="text-sm font-medium text-white hover:text-orange-400 transition-colors duration-200 relative group">
                 Ayuda
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-400 group-hover:w-full transition-all duration-300"></span>
               </a>

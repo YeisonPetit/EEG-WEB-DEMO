@@ -161,8 +161,8 @@ export default function SomosEEG() {
         {/* Fondo animado mejorado */}
         <div className="absolute inset-0 bg-linear-to-br from-orange-600/20 via-slate-950 to-cyan-600/20"></div>
         <div className="absolute inset-0">
-          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top_left,var(--tw-gradient-stops))] from-orange-500/20 via-transparent to-transparent"></div>
-          <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(ellipse_at_bottom_right,var(--tw-gradient-stops))] from-cyan-500/20 via-transparent to-transparent"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-linear(ellipse_at_top_left,var(--tw-linear-stops))] from-orange-500/20 via-transparent to-transparent"></div>
+          <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-linear(ellipse_at_bottom_right,var(--tw-linear-stops))] from-cyan-500/20 via-transparent to-transparent"></div>
         </div>
         
         {/* Elementos flotantes decorativos */}
@@ -178,14 +178,14 @@ export default function SomosEEG() {
             {/* Título principal centrado */}
             <div className="text-center mb-16">
               {/* <div className="inline-block mb-6">
-                <span className="px-6 py-3 bg-gradient-to-r from-orange-500/20 to-cyan-500/20 rounded-full border border-orange-500/30 text-orange-300 text-sm font-bold uppercase tracking-wider">
+                <span className="px-6 py-3 bg-linear-to-r from-orange-500/20 to-cyan-500/20 rounded-full border border-orange-500/30 text-orange-300 text-sm font-bold uppercase tracking-wider">
                   Escuela Europea de Gerencia
                 </span>
               </div> */}
               <h1 className="text-3xl md:text-7xl lg:text-8xl font-black text-white mb-8 leading-none">
                 Llevamos años comprometidos
                 <br />
-                 <span className="text-transparent bg-clip-text bg-linear-to-r from-orange-900 via-blue-400 to-cyan-500 animate-gradient">
+                 <span className="text-transparent bg-clip-text bg-linear-to-r from-orange-900 via-blue-400 to-cyan-500 animate-linear">
   con tu exito
 </span>
 
@@ -199,9 +199,9 @@ export default function SomosEEG() {
             <div className="grid lg:grid-cols-2 gap-12 items-start max-w-6xl mx-auto">
               {/* Imagend */}
               <div className="relative order-2 lg:order-1">
-                <div className="relative aspect-[4/3] rounded-3xl overflow-hidden border border-white/20 shadow-2xl group">
-                  {/* Gradiente de fondo animado */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-orange-500/40 via-cyan-500/30 to-orange-500/40 animate-pulse"></div>
+                <div className="relative aspect-4/3 rounded-3xl overflow-hidden border border-white/20 shadow-2xl group">
+                  {/* lineare de fondo animado */}
+                  <div className="absolute inset-0 bg-linear-to-br from-orange-500/40 via-cyan-500/30 to-orange-500/40 animate-pulse"></div>
                   
                   {/* Imagen */}
                   <img 
@@ -210,7 +210,7 @@ export default function SomosEEG() {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                   
-                  {/* Overlay gradient */}
+                  {/* Overlay linear */}
                   <div className="absolute inset-0 bg-linear-to-t from-slate-950 via-slate-950/50 to-transparent"></div>
                   
                   {/* Stats overlay */}
@@ -242,9 +242,9 @@ export default function SomosEEG() {
               {/* Contenido de texto optimizado */}
               <div className="space-y-8 order-1 lg:order-2">
                 {/* Card 1 */}
-                <div className="bg-gradient-to-br from-slate-900/80 to-slate-900/40 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-orange-500/30 transition-all duration-300 hover:transform hover:scale-[1.02]">
+                <div className="bg-linear-to-br from-slate-900/80 to-slate-900/40 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-orange-500/30 transition-all duration-300 hover:transform hover:scale-[1.02]">
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500/20 to-orange-600/10 flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 rounded-xl bg-linear-to-br from-orange-500/20 to-orange-600/10 flex items-center justify-center shrink-0">
                       <Target className="w-6 h-6 text-orange-400" />
                     </div>
                     <div>
@@ -257,9 +257,9 @@ export default function SomosEEG() {
                 </div>
 
                 {/* Card 2 */}
-                <div className="bg-gradient-to-br from-slate-900/80 to-slate-900/40 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-cyan-500/30 transition-all duration-300 hover:transform hover:scale-[1.02]">
+                <div className="bg-linear-to-br from-slate-900/80 to-slate-900/40 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-cyan-500/30 transition-all duration-300 hover:transform hover:scale-[1.02]">
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500/20 to-cyan-600/10 flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 rounded-xl bg-linear-to-br from-cyan-500/20 to-cyan-600/10 flex items-center justify-center shrink-0">
                       <Sparkles className="w-6 h-6 text-cyan-400" />
                     </div>
                     <div>
@@ -272,7 +272,7 @@ export default function SomosEEG() {
                 </div>
 
                 {/* Card 3 - CTA */}
-                {/* <div className="bg-gradient-to-br from-orange-500/20 to-cyan-500/20 backdrop-blur-sm rounded-2xl p-8 border border-orange-500/30">
+                {/* <div className="bg-linear-to-br from-orange-500/20 to-cyan-500/20 backdrop-blur-sm rounded-2xl p-8 border border-orange-500/30">
                   <div className="flex items-center justify-between">
                     <div>
                       <p className="text-white font-bold text-lg mb-2">¿Listo para transformar tu organización?</p>
@@ -315,7 +315,7 @@ export default function SomosEEG() {
       </section>
 
 {/* Stats Section */}
-<section className="py-16 md:py-20 relative bg-gradient-to-b from-slate-950 to-blue-950/50">
+<section className="py-16 md:py-20 relative bg-linear-to-b from-slate-950 to-blue-950/50">
   <div className="container mx-auto px-4 md:px-6">
     <div className="max-w-6xl mx-auto">
       <h2 className="text-2xl md:text-3xl font-bold text-white text-center mb-10 md:mb-16">
@@ -404,7 +404,7 @@ export default function SomosEEG() {
                       onClick={() => setActiveYear(index)}
                       className={`px-6 py-3 rounded-xl font-bold transition-all duration-300 ${
                         activeYear === index
-                          ? 'bg-gradient-to-r from-orange-500 to-cyan-500 text-white shadow-lg shadow-orange-500/50 scale-110'
+                          ? 'bg-linear-to-r from-orange-500 to-cyan-500 text-white shadow-lg shadow-orange-500/50 scale-110'
                           : 'bg-slate-800/50 text-gray-400 hover:text-white hover:bg-slate-800 border border-white/10'
                       }`}
                     >
@@ -414,7 +414,7 @@ export default function SomosEEG() {
                 </div>
 
                 {/* Contenedor de contenido */}
-                <div className="relative bg-gradient-to-br from-slate-900/80 to-slate-900/40 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-white/10 min-h-[400px]">
+                <div className="relative bg-linear-to-br from-slate-900/80 to-slate-900/40 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-white/10 min-h-[400px]">
                   {/* Navegación */}
                   <div className="absolute top-1/2 -translate-y-1/2 left-4 right-4 flex justify-between pointer-events-none">
                     <button
@@ -445,11 +445,11 @@ export default function SomosEEG() {
                   <div className="space-y-6" key={activeYear}>
                     {/* Año destacado */}
                     <div className="flex items-center justify-center gap-4 mb-6">
-                      <div className="h-px flex-1 bg-gradient-to-r from-transparent to-orange-500/50"></div>
-                      <span className="px-8 py-3 bg-gradient-to-r from-orange-500/20 to-cyan-500/20 rounded-full text-orange-400 font-black text-3xl border border-orange-500/30 animate-fade-in-up">
+                      <div className="h-px flex-1 bg-linear-to-r from-transparent to-orange-500/50"></div>
+                      <span className="px-8 py-3 bg-linear-to-r from-orange-500/20 to-cyan-500/20 rounded-full text-orange-400 font-black text-3xl border border-orange-500/30 animate-fade-in-up">
                         {timeline[activeYear].year}
                       </span>
-                      <div className="h-px flex-1 bg-gradient-to-l from-transparent to-cyan-500/50"></div>
+                      <div className="h-px flex-1 bg-linear-to-l from-transparent to-cyan-500/50"></div>
                     </div>
 
                     {/* Título */}
@@ -458,9 +458,9 @@ export default function SomosEEG() {
                     </h4>
 
                     {/* Quote destacado */}
-                    <div className="bg-gradient-to-r from-orange-500/10 to-cyan-500/10 rounded-2xl p-6 border border-orange-500/20 mb-6 animate-fade-in-up">
+                    <div className="bg-linear-to-r from-orange-500/10 to-cyan-500/10 rounded-2xl p-6 border border-orange-500/20 mb-6 animate-fade-in-up">
                       <div className="flex items-start gap-4">
-                        <Quote className="w-8 h-8 text-orange-400 flex-shrink-0 mt-1" />
+                        <Quote className="w-8 h-8 text-orange-400 shrink-0 mt-1" />
                         <p className="text-xl md:text-2xl text-cyan-300 italic font-medium">
                           {timeline[activeYear].quote}
                         </p>
@@ -479,7 +479,7 @@ export default function SomosEEG() {
                           key={index}
                           className={`h-1.5 rounded-full transition-all duration-300 ${
                             index === activeYear
-                              ? 'w-12 bg-gradient-to-r from-orange-500 to-cyan-500'
+                              ? 'w-12 bg-linear-to-r from-orange-500 to-cyan-500'
                               : 'w-1.5 bg-slate-700'
                           }`}
                         />
@@ -494,7 +494,7 @@ export default function SomosEEG() {
       </section>
 
       {/* Valores */}
-      <section className="py-20 relative bg-gradient-to-b from-slate-950 to-slate-900">
+      <section className="py-20 relative bg-linear-to-b from-slate-950 to-slate-900">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-black text-white text-center mb-16">
@@ -504,7 +504,7 @@ export default function SomosEEG() {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {['Integridad', 'Excelencia', 'Innovación', 'Compromiso'].map((valor, index) => (
                 <div key={index} className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-cyan-500/30 transition-all duration-300 text-center group">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-orange-500/20 to-cyan-500/20 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                  <div className="w-16 h-16 rounded-full bg-linear-to-br from-orange-500/20 to-cyan-500/20 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                     <CheckCircle className="w-8 h-8 text-cyan-400" />
                   </div>
                   <h3 className="text-xl font-bold text-white">{valor}</h3>
@@ -519,7 +519,7 @@ export default function SomosEEG() {
       <section className="py-20 relative">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="bg-gradient-to-br from-orange-500/10 to-cyan-500/10 rounded-3xl p-12 border border-orange-500/20">
+            <div className="bg-linear-to-br from-orange-500/10 to-cyan-500/10 rounded-3xl p-12 border border-orange-500/20">
               <Sparkles className="w-12 h-12 text-orange-400 mx-auto mb-6" />
               <h2 className="text-4xl font-black text-white mb-6">
                 Únete a nuestra comunidad de líderes
@@ -528,8 +528,8 @@ export default function SomosEEG() {
                 Descubre cómo podemos ayudarte a alcanzar tus objetivos profesionales
               </p>
               <a
-                href="/contacto"
-                className="inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold rounded-2xl hover:shadow-2xl hover:shadow-orange-500/50 transition-all duration-300 hover:scale-105"
+                href="/Programas"
+                className="inline-flex items-center gap-3 px-10 py-5 bg-linear-to-r from-orange-500 to-orange-600 text-white font-bold rounded-2xl hover:shadow-2xl hover:shadow-orange-500/50 transition-all duration-300 hover:scale-105"
               >
                 Conoce nuestros programas
                 <TrendingUp className="w-5 h-5" />
